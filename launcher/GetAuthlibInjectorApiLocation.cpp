@@ -72,7 +72,7 @@ auto GetAuthlibInjectorApiLocation::Sink::finalize(QNetworkReply& reply) -> Task
         qDebug() << "X-Authlib-Injector-API-Location header not found!";
     }
 
-    const auto & encodedUrl = url.toEncoded(QUrl::FullyEncoded);
+    const auto& encodedUrl = url.toEncoded(QUrl::FullyEncoded);
     m_outer.m_account.reset(MinecraftAccount::createFromUsernameAuthlibInjector(m_outer.m_username, encodedUrl));
     return Task::State::Succeeded;
 }
