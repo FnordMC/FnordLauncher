@@ -387,6 +387,10 @@ set(MINECRAFT_SOURCES
     minecraft/AssetsUtils.cpp
 
     # Minecraft skins
+    minecraft/skins/AuthlibInjectorTextureDelete.cpp
+    minecraft/skins/AuthlibInjectorTextureDelete.h
+    minecraft/skins/AuthlibInjectorTextureUpload.cpp
+    minecraft/skins/AuthlibInjectorTextureUpload.h
     minecraft/skins/CapeChange.cpp
     minecraft/skins/CapeChange.h
     minecraft/skins/SkinUpload.cpp
