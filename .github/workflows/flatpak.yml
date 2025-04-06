@@ -58,5 +58,5 @@ jobs:
         uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: FjordLauncher-${{ runner.os }}-${{ env.VERSION }}-Flatpak.flatpak
-          manifest-path: flatpak/org.fjordlauncher.FjordLauncher.yml
+          manifest-path: flatpak/org.unmojang.FjordLauncher.yml
           arch: ${{ matrix.arch }}
