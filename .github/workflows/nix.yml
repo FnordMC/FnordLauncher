@@ -2,21 +2,30 @@ name: Nix
 
 on:
   push:
-    paths-ignore:
-      - "**.md"
-      - "**/LICENSE"
-      - ".github/ISSUE_TEMPLATE/**"
-      - ".markdownlint**"
-      - "flatpak/**"
     tags:
       - "*"
+    paths-ignore:
+      - ".github/**"
+      - "!.github/workflows/nix.yml"
+      - "flatpak/"
+      - "scripts/"
+
+      - ".git*"
+      - ".envrc"
+      - "**.md"
+      - "!COPYING.md"
+      - "renovate.json"
   pull_request_target:
     paths-ignore:
+      - ".github/**"
+      - "flatpak/"
+      - "scripts/"
+
+      - ".git*"
+      - ".envrc"
       - "**.md"
-      - "**/LICENSE"
-      - ".github/ISSUE_TEMPLATE/**"
-      - ".markdownlint**"
-      - "flatpak/**"
+      - "!COPYING.md"
+      - "renovate.json"
   workflow_dispatch:
 
 permissions:
@@ -62,7 +71,7 @@ jobs:
 
         # For PRs
       - name: Setup Nix Magic Cache
-        if: ${{ env.USE_DETERMINATE }}
+        if: ${{ env.USE_DETERMINATE == 'true' }}
         uses: DeterminateSystems/flakehub-cache-action@v1
 
         # For in-tree builds
@@ -78,11 +87,17 @@ jobs:
           nix flake check --print-build-logs --show-trace
 
       - name: Build debug package
-        if: ${{ env.DEBUG }}
+        if: ${{ env.DEBUG == 'true' }}
         run: |
           nix build --print-build-logs .#fjordlauncher-debug
 
       - name: Build release package
-        if: ${{ !env.DEBUG }}
+        if: ${{ env.DEBUG == 'false' }}
+        env:
+          TAG: ${{ github.ref_name }}
+          SYSTEM: ${{ matrix.system }}
         run: |
           nix build --print-build-logs .#fjordlauncher
+          nix build --no-link --print-out-paths .#fjordlauncher \
+            | tee -a "$GITHUB_STEP_SUMMARY" \
+            | xargs cachix pin fjordlauncher "$TAG"-"$SYSTEM"
