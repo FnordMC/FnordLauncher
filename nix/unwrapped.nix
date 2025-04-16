@@ -45,7 +45,7 @@ in
 
 stdenv.mkDerivation {
   pname = "fjordlauncher-unwrapped";
-  version = "9.3-unstable-${date}";
+  version = "9.4-unstable-${date}";
 
   src = lib.fileset.toSource {
     root = ../.;
