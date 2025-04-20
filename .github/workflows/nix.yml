@@ -100,4 +100,4 @@ jobs:
           nix build --print-build-logs .#fjordlauncher
           nix build --no-link --print-out-paths .#fjordlauncher \
             | tee -a "$GITHUB_STEP_SUMMARY" \
-            | xargs cachix pin fjordlauncher "$TAG"-"$SYSTEM"
+            | xargs cachix pin unmojang "$TAG"-"$SYSTEM"
