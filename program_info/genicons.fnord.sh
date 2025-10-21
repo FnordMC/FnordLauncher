@@ -10,7 +10,7 @@ svg2png() {
 }
 
 if command -v "svgo"; then
-    svgo org.unmojang.FnordLauncher.Source.svg -o org.unmojang.FjordLauncher.svg
+    svgo org.unmojang.FnordLauncher.Source.svg -o org.unmojang.FnordLauncher.svg
 else
     echo 'ERROR: svgo not in $PATH'
 fi

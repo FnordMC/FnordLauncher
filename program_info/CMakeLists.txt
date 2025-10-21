@@ -36,8 +36,8 @@ set(Launcher_Branding_LogoQRC "program_info/fnordlauncher.qrc" PARENT_SCOPE)
 
 set(Launcher_Portable_File "program_info/portable.txt" PARENT_SCOPE)
 
-configure_file(org.unmojang.FnordLauncher.desktop.in org.unmojang.FjordLauncher.desktop)
-configure_file(org.unmojang.FnordLauncher.metainfo.xml.in org.unmojang.FjordLauncher.metainfo.xml)
+configure_file(org.unmojang.FnordLauncher.desktop.in org.unmojang.FnordLauncher.desktop)
+configure_file(org.unmojang.FnordLauncher.metainfo.xml.in org.unmojang.FnordLauncher.metainfo.xml)
 configure_file(fnordlauncher.rc.in fnordlauncher.rc @ONLY)
 configure_file(fnordlauncher.manifest.in fnordlauncher.manifest @ONLY)
 configure_file(fnordlauncher.ico fnordlauncher.ico COPYONLY)
