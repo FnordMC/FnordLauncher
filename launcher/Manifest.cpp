@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Fjord Launcher - Minecraft Launcher
+ *  Fnord Launcher - Minecraft Launcher
  *  Copyright (C) 2024 Evan Goode <mail@evangoo.de>
  *
  *  This program is free software: you can redistribute it and/or modify

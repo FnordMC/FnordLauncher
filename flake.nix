@@ -90,13 +90,13 @@
           packages' = self.packages.${system};
 
           # Re-use our package wrapper to wrap our development environment
-          qt-wrapper-env = packages'.fjordlauncher.overrideAttrs (old: {
+          qt-wrapper-env = packages'.fnordlauncher.overrideAttrs (old: {
             name = "qt-wrapper-env";
 
             # Required to use script-based makeWrapper below
             strictDeps = true;
 
-            # We don't need/want the unwrapped Fjord package
+            # We don't need/want the unwrapped Fnord package
             paths = [ ];
 
             nativeBuildInputs = old.nativeBuildInputs or [ ] ++ [
@@ -114,7 +114,7 @@
 
         {
           default = pkgs.mkShell {
-            inputsFrom = [ packages'.fjordlauncher-unwrapped ];
+            inputsFrom = [ packages'.fnordlauncher-unwrapped ];
 
             packages = with pkgs; [
               ccache
@@ -122,7 +122,7 @@
             ];
 
             cmakeBuildType = "Debug";
-            cmakeFlags = [ "-GNinja" ] ++ packages'.fjordlauncher.cmakeFlags;
+            cmakeFlags = [ "-GNinja" ] ++ packages'.fnordlauncher.cmakeFlags;
             dontFixCmake = true;
 
             shellHook = ''
@@ -144,14 +144,14 @@
       formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
 
       overlays.default = final: prev: {
-        fjordlauncher-unwrapped = prev.callPackage ./nix/unwrapped.nix {
+        fnordlauncher-unwrapped = prev.callPackage ./nix/unwrapped.nix {
           inherit
             libnbtplusplus
             self
             ;
         };
 
-        fjordlauncher = final.callPackage ./nix/wrapper.nix { };
+        fnordlauncher = final.callPackage ./nix/wrapper.nix { };
       };
 
       packages = forAllSystems (
@@ -161,12 +161,12 @@
           pkgs = nixpkgsFor.${system};
 
           # Build a scope from our overlay
-          fjordPackages = lib.makeScope pkgs.newScope (final: self.overlays.default final pkgs);
+          fnordPackages = lib.makeScope pkgs.newScope (final: self.overlays.default final pkgs);
 
           # Grab our packages from it and set the default
           packages = {
-            inherit (fjordPackages) fjordlauncher-unwrapped fjordlauncher;
-            default = fjordPackages.fjordlauncher;
+            inherit (fnordPackages) fnordlauncher-unwrapped fjordlauncher;
+            default = fnordPackages.fnordlauncher;
           };
         in
 
@@ -184,11 +184,11 @@
         in
 
         {
-          fjordlauncher-debug = packages'.fjordlauncher.override {
-            fjordlauncher-unwrapped = legacyPackages'.fjordlauncher-unwrapped-debug;
+          fnordlauncher-debug = packages'.fnordlauncher.override {
+            fnordlauncher-unwrapped = legacyPackages'.fnordlauncher-unwrapped-debug;
           };
 
-          fjordlauncher-unwrapped-debug = packages'.fjordlauncher-unwrapped.overrideAttrs {
+          fnordlauncher-unwrapped-debug = packages'.fnordlauncher-unwrapped.overrideAttrs {
             cmakeBuildType = "Debug";
             dontStrip = true;
           };

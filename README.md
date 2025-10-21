@@ -1,6 +1,6 @@
-# <img src="./program_info/org.unmojang.FjordLauncher.svg" alt="Fjord Launcher logo" width="96"/> Fjord Launcher
+# <img src="./program_info/org.unmojang.FnordLauncher.svg" alt="Fjord Launcher logo" width="96"/> Fjord Launcher
 
-Fjord Launcher is a **fork** of [Prism Launcher](https://github.com/PrismLauncher/PrismLauncher). It was based on [PollyMC](https://github.com/fn2006/PollyMC), which is now unmaintained. It is **not** endorsed by or affiliated with Prism Launcher or PollyMC.
+Fnord Launcher is a **fork** of [Prism Launcher](https://github.com/PrismLauncher/PrismLauncher). It was based on [PollyMC](https://github.com/fn2006/PollyMC), which is now unmaintained. It is **not** endorsed by or affiliated with Prism Launcher or PollyMC.
 
 ## Advantages of this fork over Prism Launcher
 
@@ -10,7 +10,7 @@ Fjord Launcher is a **fork** of [Prism Launcher](https://github.com/PrismLaunche
 
 ## Having a problem with the launcher?
 
-**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fjord Launcher in the Prism Launcher Discord server. Instead, ask in #fjord-launcher in our [Matrix space](https://matrix.to/#/#unmojang:matrix.org), or open an issue [here](https://github.com/unmojang/FjordLauncher/issues), in this repository.
+**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fnord Launcher in the Prism Launcher Discord server. Instead, ask in #fnord-launcher in our [Matrix space](https://matrix.to/#/#unmojang:matrix.org), or open an issue [here](https://github.com/unmojang/FjordLauncher/issues), in this repository.
 
 ## Installation
 
@@ -20,12 +20,12 @@ Fjord Launcher is a **fork** of [Prism Launcher](https://github.com/PrismLaunche
 
 ```PowerShell
 scoop bucket add unmojang https://github.com/unmojang/scoop-unmojang
-scoop install unmojang/fjordlauncher
+scoop install unmojang/fnordlauncher
 ```
 
 #### Windows (Manual)
 
-You can get installers or portable builds from the [releases section](https://github.com/unmojang/FjordLauncher/releases/latest), MSVC builds are recommended over MinGW builds, but there's no real difference.
+You can get installers or portable builds from the [releases section](https://github.com/unmojang/FnordLauncher/releases/latest), MSVC builds are recommended over MinGW builds, but there's no real difference.
 
 ### macOS
 
@@ -33,40 +33,40 @@ You can get installers or portable builds from the [releases section](https://gi
 
 ```Shell
 brew tap unmojang/homebrew-unmojang
-brew install --cask fjordlauncher
+brew install --cask fnordlauncher
 ```
 
 #### macOS (Manual)
 
-There are builds for macOS in the [releases section](https://github.com/unmojang/FjordLauncher/releases/latest).
+There are builds for macOS in the [releases section](https://github.com/unmojang/FnordLauncher/releases/latest).
 
 ### Flatpak
 
 ```Shell
 flatpak remote-add --user --if-not-exists unmojang https://unmojang.github.io/unmojang-flatpak/index.flatpakrepo
-flatpak install org.unmojang.FjordLauncher
+flatpak install org.unmojang.FnordLauncher
 ```
 
 ### Arch Linux
 
-Fjord Launcher is [available](https://aur.archlinux.org/packages?O=0&K=fjordlauncher) from the AUR:
+Fnord Launcher is [available](https://aur.archlinux.org/packages?O=0&K=fnordlauncher) from the AUR:
 
 ```Shell
-paru -S fjordlauncher
-paru -S fjordlauncher-git # build latest Git commit from source
+paru -S fnordlauncher
+paru -S fnordlauncher-git # build latest Git commit from source
 ```
 
-`fjordlauncher` is available in [Chaotic-AUR](https://aur.chaotic.cx/).
+`fnordlauncher` is available in [Chaotic-AUR](https://aur.chaotic.cx/).
 
-The `fjordlauncher-bin` AUR package is broken; see [https://github.com/unmojang/FjordLauncher/issues/20](https://github.com/unmojang/FjordLauncher/issues/20).
+The `fnordlauncher-bin` AUR package is broken; see [https://github.com/unmojang/FnordLauncher/issues/20](https://github.com/unmojang/FjordLauncher/issues/20).
 
 ### Debian/Ubuntu
 
 Install from the MPR with [Mist](https://docs.makedeb.org/using-the-mpr/mist-the-mpr-cli/#installing-mist):
 
 ```Shell
-mist install fjordlauncher
-mist install fjordlauncher-git # build latest Git commit from source
+mist install fnordlauncher
+mist install fnordlauncher-git # build latest Git commit from source
 ```
 
 ### Nix
@@ -74,7 +74,7 @@ mist install fjordlauncher-git # build latest Git commit from source
 This repository contains a Nix flake:
 
 ```Shell
-nix run github:unmojang/FjordLauncher
+nix run github:unmojang/FnordLauncher
 ```
 
 See [nix/README.md](nix/README.md) for details.
@@ -86,12 +86,12 @@ Install from the [unmojang overlay](https://github.com/unmojang/unmojang-overlay
 ```Shell
 eselect repository enable unmojang-overlay
 emaint sync -r unmojang-overlay
-emerge -av games-action/fjordlauncher
+emerge -av games-action/fnordlauncher
 ```
 
 ### Other Linux
 
-AppImages are available in the [releases section](https://github.com/unmojang/FjordLauncher/releases/latest).
+AppImages are available in the [releases section](https://github.com/unmojang/FnordLauncher/releases/latest).
 
 ## Building
 

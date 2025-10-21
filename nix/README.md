@@ -1,4 +1,4 @@
-# Fjord Launcher Nix Packaging
+# Fnord Launcher Nix Packaging
 
 ## Installing a development release (flake)
 
@@ -22,7 +22,7 @@ Example (NixOS):
 
 ### Installing the package directly
 
-After adding `github:unmojang/FjordLauncher` to your flake inputs, you can access the flake's `packages` output.
+After adding `github:unmojang/FnordLauncher` to your flake inputs, you can access the flake's `packages` output.
 
 Example:
 
@@ -31,10 +31,10 @@ Example:
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    fjordlauncher = {
-      url = "github:unmojang/FjordLauncher";
+    fnordlauncher = {
+      url = "github:unmojang/FnordLauncher";
 
-      # Optional: Override the nixpkgs input of fjordlauncher to use the same revision as the rest of your flake
+      # Optional: Override the nixpkgs input of fnordlauncher to use the same revision as the rest of your flake
       # Note that this may break the reproducibility mentioned above, and you might not be able to access the binary cache
       #
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +42,7 @@ Example:
   };
 
   outputs =
-    { nixpkgs, fjordlauncher, ... }:
+    { nixpkgs, fnordlauncher, ... }:
     {
       nixosConfigurations.foo = nixpkgs.lib.nixosSystem {
         modules = [
@@ -51,7 +51,7 @@ Example:
           (
             { pkgs, ... }:
             {
-              environment.systemPackages = [ fjordlauncher.packages.${pkgs.system}.fjordlauncher ];
+              environment.systemPackages = [ fnordlauncher.packages.${pkgs.system}.fnordlauncher ];
             }
           )
         ];
@@ -63,7 +63,7 @@ Example:
 ### Using the overlay
 
 Alternatively, if you don't want to use our `packages` output, you can add our overlay to your nixpkgs instance.
-This will ensure Fjord is built with your system's packages.
+This will ensure Fnord is built with your system's packages.
 
 > [!WARNING]
 > Depending on what revision of nixpkgs your system uses, this may result in binaries that differ from the above `packages` output
@@ -76,10 +76,10 @@ Example:
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    fjordlauncher = {
-      url = "github:unmojang/FjordLauncher";
+    fnordlauncher = {
+      url = "github:unmojang/FnordLauncher";
 
-      # Optional: Override the nixpkgs input of fjordlauncher to use the same revision as the rest of your flake
+      # Optional: Override the nixpkgs input of fnordlauncher to use the same revision as the rest of your flake
       # Note that this may break the reproducibility mentioned above, and you might not be able to access the binary cache
       #
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -87,7 +87,7 @@ Example:
   };
 
   outputs =
-    { nixpkgs, fjordlauncher, ... }:
+    { nixpkgs, fnordlauncher, ... }:
     {
       nixosConfigurations.foo = nixpkgs.lib.nixosSystem {
         modules = [
@@ -96,9 +96,9 @@ Example:
           (
             { pkgs, ... }:
             {
-              nixpkgs.overlays = [ fjordlauncher.overlays.default ];
+              nixpkgs.overlays = [ fnordlauncher.overlays.default ];
 
-              environment.systemPackages = [ pkgs.fjordlauncher ];
+              environment.systemPackages = [ pkgs.fnordlauncher ];
             }
           )
         ];
@@ -114,11 +114,11 @@ You can simply call the default package of this flake.
 Example:
 
 ```shell
-nix run github:unmojang/FjordLauncher
+nix run github:unmojang/FnordLauncher
 
-nix shell github:unmojang/FjordLauncher
+nix shell github:unmojang/FnordLauncher
 
-nix profile install github:unmojang/FjordLauncher
+nix profile install github:unmojang/FnordLauncher
 ```
 
 ## Installing a development release (without flakes)
@@ -151,8 +151,8 @@ Example:
 {
   environment.systemPackages = [
     (import (
-      builtins.fetchTarball "https://github.com/FjordLauncher/FjordLauncher/archive/develop.tar.gz"
-    )).packages.${pkgs.system}.fjordlauncher
+      builtins.fetchTarball "https://github.com/FnordLauncher/FjordLauncher/archive/develop.tar.gz"
+    )).packages.${pkgs.system}.fnordlauncher
   ];
 }
 ```
@@ -160,7 +160,7 @@ Example:
 ### Using the overlay (`fetchTarball`)
 
 Alternatively, if you don't want to use our `packages` output, you can add our overlay to your instance of nixpkgs.
-This results in Fjord using your system's libraries
+This results in Fnord using your system's libraries
 
 Example:
 
@@ -169,11 +169,11 @@ Example:
 {
   nixpkgs.overlays = [
     (import (
-      builtins.fetchTarball "https://github.com/FjordLauncher/FjordLauncher/archive/develop.tar.gz"
+      builtins.fetchTarball "https://github.com/FnordLauncher/FjordLauncher/archive/develop.tar.gz"
     )).overlays.default
   ];
 
-  environment.systemPackages = [ pkgs.fjordlauncher ];
+  environment.systemPackages = [ pkgs.fnordlauncher ];
 }
 ```
 
@@ -184,23 +184,23 @@ You can add this repository as a channel and install its packages that way.
 Example:
 
 ```shell
-nix-channel --add https://github.com/unmojang/FjordLauncher/archive/develop.tar.gz fjordlauncher
+nix-channel --add https://github.com/unmojang/FnordLauncher/archive/develop.tar.gz fnordlauncher
 
-nix-channel --update fjordlauncher
+nix-channel --update fnordlauncher
 
-nix-env -iA fjordlauncher.fjordlauncher
+nix-env -iA fnordlauncher.fnordlauncher
 ```
 
 ## Package variants
 
 This repository offers the following packages:
 
-- `fjordlauncher` - The preferred build, wrapped with everything necessary to run the launcher and Minecraft
-- `fjordlauncher-unwrapped` - A minimal build that allows for advanced customization of the launcher's runtime environment
+- `fnordlauncher` - The preferred build, wrapped with everything necessary to run the launcher and Minecraft
+- `fnordlauncher-unwrapped` - A minimal build that allows for advanced customization of the launcher's runtime environment
 
 ### Customizing wrapped packages
 
-The wrapped package (`fjordlauncher`) offers some build parameters to further customize the launcher's environment.
+The wrapped package (`fnordlauncher`) offers some build parameters to further customize the launcher's environment.
 
 The following parameters can be overridden:
 

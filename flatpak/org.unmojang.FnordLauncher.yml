@@ -1,11 +1,11 @@
-id: org.unmojang.FjordLauncher
+id: org.unmojang.FnordLauncher
 runtime: org.kde.Platform
 runtime-version: '6.8'
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 
-command: fjordlauncher
+command: fnordlauncher
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -36,7 +36,7 @@ modules:
   # Text to Speech in the game
   - flite.json
 
-  - name: fjordlauncher
+  - name: fnordlauncher
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
@@ -142,10 +142,10 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 prime-run /app/bin/prime-run
-      - mv /app/bin/fjordlauncher /app/bin/fjordrun
-      - install -Dm755 fjordlauncher /app/bin/fjordlauncher
+      - mv /app/bin/fnordlauncher /app/bin/fnordrun
+      - install -Dm755 fnordlauncher /app/bin/fnordlauncher
     sources:
       - type: file
         path: prime-run
       - type: file
-        path: fjordlauncher
+        path: fnordlauncher

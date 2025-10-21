@@ -44,7 +44,7 @@ let
 in
 
 stdenv.mkDerivation {
-  pname = "fjordlauncher-unwrapped";
+  pname = "fnordlauncher-unwrapped";
   version = "9.4-unstable-${date}";
 
   src = lib.fileset.toSource {
@@ -120,12 +120,12 @@ stdenv.mkDerivation {
       their own mods, texture packs, saves, etc) and helps you manage them and
       their associated options with a simple interface.
     '';
-    homepage = "https://github.com/unmojang/FjordLauncher";
+    homepage = "https://github.com/unmojang/FnordLauncher";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       evan-goode
     ];
-    mainProgram = "fjordlauncher";
+    mainProgram = "fnordlauncher";
     platforms = lib.platforms.linux ++ lib.platforms.darwin;
   };
 }

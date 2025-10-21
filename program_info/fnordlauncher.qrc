@@ -1,6 +1,6 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
     <qresource prefix="/">
-        <file>org.unmojang.FjordLauncher.svg</file>
+        <file>org.unmojang.FnordLauncher.svg</file>
     </qresource>
 </RCC>

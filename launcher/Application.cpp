@@ -950,7 +950,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
 
     // check update locks
     {
-        auto update_log_path = FS::PathCombine(m_dataPath, "logs", "fjordlauncher_update.log");
+        auto update_log_path = FS::PathCombine(m_dataPath, "logs", "fnordlauncher_update.log");
 
         auto update_lock = QFileInfo(FS::PathCombine(m_dataPath, ".prism_launcher_update.lock"));
         if (update_lock.exists()) {
@@ -964,7 +964,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
                               "\n"
                               "This likely means that a update attempt failed. Please ensure your installation is in working order before "
                               "proceeding.\n"
-                              "Check the Fjord Launcher updater log at: \n"
+                              "Check the Fnord Launcher updater log at: \n"
                               "%7\n"
                               "for details on the last update attempt.\n"
                               "\n"
@@ -1000,7 +1000,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
                               "\n"
                               "Please ensure your installation is in working order before "
                               "proceeding.\n"
-                              "Check the Fjord Launcher updater log at: \n"
+                              "Check the Fnord Launcher updater log at: \n"
                               "%1\n"
                               "for details on the last update attempt.")
                                .arg(update_log_path);
@@ -1031,7 +1031,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
             auto infoMsg = tr("Update succeeded\n"
                               "\n"
                               "You are now running %1 .\n"
-                              "Check the Fjord Launcher updater log at: \n"
+                              "Check the Fnord Launcher updater log at: \n"
                               "%2\n"
                               "for details.")
                                .arg(BuildConfig.printableVersionString())
@@ -1262,7 +1262,7 @@ void Application::performMainStartupAction()
             msgBox.setWindowTitle(tr("Fetch CurseForge Core API key?"));
             msgBox.setText(tr("Would you like to fetch the official CurseForge app's API key now?"));
             msgBox.setInformativeText(
-                tr("Using the official CurseForge app's API key may break CurseForge's terms of service but should allow Fjord Launcher "
+                tr("Using the official CurseForge app's API key may break CurseForge's terms of service but should allow Fnord Launcher "
                    "to download all mods in a modpack without you needing to download any of them manually."));
             msgBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes);
             msgBox.setDefaultButton(QMessageBox::Yes);

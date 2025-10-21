@@ -218,11 +218,11 @@ PrismUpdaterApp::PrismUpdaterApp(int& argc, char** argv) : QApplication(argc, ar
 
     // Command line parsing
     QCommandLineParser parser;
-    parser.setApplicationDescription(QObject::tr("An auto-updater for Fjord Launcher"));
+    parser.setApplicationDescription(QObject::tr("An auto-updater for Fnord Launcher"));
 
     parser.addOptions(
         { { { "d", "dir" }, tr("Use a custom path as application root (use '.' for current directory)."), tr("directory") },
-          { { "V", "fjordlauncher-version" },
+          { { "V", "fnordlauncher-version" },
             tr("Use this version as the installed launcher version. (provided because stdout can not be reliably captured on windows)"),
             tr("installed launcher version") },
           { { "I", "install-version" }, "Install a specific version.", tr("version name") },
@@ -286,7 +286,7 @@ PrismUpdaterApp::PrismUpdaterApp(int& argc, char** argv) : QApplication(argc, ar
     m_selectUI = parser.isSet("select-ui");
     m_allowDowngrade = parser.isSet("allow-downgrade");
 
-    auto version = parser.value("fjordlauncher-version");
+    auto version = parser.value("fnordlauncher-version");
     if (!version.isEmpty()) {
         if (version.contains('-')) {
             auto index = version.indexOf('-');
@@ -364,7 +364,7 @@ PrismUpdaterApp::PrismUpdaterApp(int& argc, char** argv) : QApplication(argc, ar
 #endif
     }
 
-    m_updateLogPath = FS::PathCombine(m_dataPath, "logs", "fjordlauncher_update.log");
+    m_updateLogPath = FS::PathCombine(m_dataPath, "logs", "fnordlauncher_update.log");
 
     {  // setup logging
         FS::ensureFolderPathExists(FS::PathCombine(m_dataPath, "logs"));
@@ -588,7 +588,7 @@ void PrismUpdaterApp::run()
 
     if (m_isFlatpak) {
         showFatalErrorMessage(tr("Updating flatpack not supported"), tr("Actions outside of checking if an update is available are not "
-                                                                        "supported when running the flatpak version of Fjord Launcher."));
+                                                                        "supported when running the flatpak version of Fnord Launcher."));
         return;
     }
     if (m_isAppimage) {
@@ -1111,13 +1111,13 @@ void PrismUpdaterApp::backupAppDir()
     if (file_list.isEmpty()) {
         // best guess
         if (BuildConfig.BUILD_ARTIFACT.toLower().contains("linux")) {
-            file_list.append({ "FjordLauncher", "bin", "share", "lib" });
+            file_list.append({ "FnordLauncher", "bin", "share", "lib" });
         } else {  // windows by process of elimination
             file_list.append({
                 "jars",
-                "fjordlauncher.exe",
-                "fjordlauncher_filelink.exe",
-                "fjordlauncher_updater.exe",
+                "fnordlauncher.exe",
+                "fnordlauncher_filelink.exe",
+                "fnordlauncher_updater.exe",
                 "qtlogging.ini",
                 "imageformats",
                 "iconengines",

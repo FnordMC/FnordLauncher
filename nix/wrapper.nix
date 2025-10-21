@@ -22,7 +22,7 @@
   openal,
   pciutils,
   pipewire,
-  fjordlauncher-unwrapped,
+  fnordlauncher-unwrapped,
   stdenv,
   symlinkJoin,
   udev,
@@ -47,12 +47,12 @@ assert lib.assertMsg (
   textToSpeechSupport -> stdenv.hostPlatform.isLinux
 ) "textToSpeechSupport only has an effect on Linux.";
 let
-  fjordlauncher' = fjordlauncher-unwrapped.override { inherit msaClientID gamemodeSupport; };
+  fnordlauncher' = fjordlauncher-unwrapped.override { inherit msaClientID gamemodeSupport; };
 in
 symlinkJoin {
-  name = "fjordlauncher-${fjordlauncher'.version}";
+  name = "fnordlauncher-${fjordlauncher'.version}";
 
-  paths = [ fjordlauncher' ];
+  paths = [ fnordlauncher' ];
 
   nativeBuildInputs = [ kdePackages.wrapQtAppsHook ];
 
@@ -114,7 +114,7 @@ symlinkJoin {
     ];
 
   meta = {
-    inherit (fjordlauncher'.meta)
+    inherit (fnordlauncher'.meta)
       description
       longDescription
       homepage

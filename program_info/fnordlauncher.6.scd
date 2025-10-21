@@ -1,27 +1,27 @@
-fjordlauncher(6)
+fnordlauncher(6)
 
 
 # NAME
 
-fjordlauncher - a launcher and instance manager for Minecraft.
+fnordlauncher - a launcher and instance manager for Minecraft.
 
 
 # SYNOPSIS
 
-*fjordlauncher* [OPTIONS...]
+*fnordlauncher* [OPTIONS...]
 
 
 # DESCRIPTION
 
-Fjord Launcher is a custom launcher for Minecraft that allows you to easily manage
+Fnord Launcher is a custom launcher for Minecraft that allows you to easily manage
 multiple installations of Minecraft at once. It also allows you to easily
 install and remove mods by simply dragging and dropping.
-Here are the current features of Fjord Launcher.
+Here are the current features of Fnord Launcher.
 
 # OPTIONS
 
 *-d, --dir*=DIRECTORY
-	Use DIRECTORY as the Fjord Launcher root.
+	Use DIRECTORY as the Fnord Launcher root.
 
 *-l, --launch*=INSTANCE_ID
 	Launch the instance specified by INSTANCE_ID.
@@ -30,7 +30,7 @@ Here are the current features of Fjord Launcher.
 	Show the configuration window of the instance specified by INSTANCE_ID.
 
 *--alive*
-	Write a small 'live.check' file after Fjord Launcher starts.
+	Write a small 'live.check' file after Fnord Launcher starts.
 
 *-h, --help*
 	Display help text and exit.
@@ -69,11 +69,11 @@ variables, besides other common Qt variables:
 
 # BUGS
 
-https://github.com/unmojang/FjordLauncher/issues
+https://github.com/unmojang/FnordLauncher/issues
 
 # RESOURCES
 
-GitHub: https://github.com/unmojang/FjordLauncher
+GitHub: https://github.com/unmojang/FnordLauncher
 
 # AUTHORS
 
@@ -85,4 +85,4 @@ PollyMC Contributors
 
 Prism Launcher Contributors
 
-Fjord Launcher Contributors
+Fnord Launcher Contributors
