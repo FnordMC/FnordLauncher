@@ -89,7 +89,7 @@ jobs:
       - name: Build debug package
         if: ${{ env.DEBUG == 'true' }}
         run: |
-          nix build --print-build-logs .#fjordlauncher-debug
+          nix build --print-build-logs .#fnordlauncher-debug
 
       - name: Build release package
         if: ${{ env.DEBUG == 'false' }}
@@ -97,7 +97,7 @@ jobs:
           TAG: ${{ github.ref_name }}
           SYSTEM: ${{ matrix.system }}
         run: |
-          nix build --print-build-logs .#fjordlauncher
-          nix build --no-link --print-out-paths .#fjordlauncher \
+          nix build --print-build-logs .#fnordlauncher
+          nix build --no-link --print-out-paths .#fnordlauncher \
             | tee -a "$GITHUB_STEP_SUMMARY" \
             | xargs cachix pin unmojang "$TAG"-"$SYSTEM"
