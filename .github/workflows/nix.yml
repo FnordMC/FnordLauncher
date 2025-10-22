@@ -79,7 +79,7 @@ jobs:
         if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         uses: cachix/cachix-action@v15
         with:
-          name: unmojang
+          name: ashley-graves
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Run Flake checks
@@ -100,4 +100,4 @@ jobs:
           nix build --print-build-logs .#fnordlauncher
           nix build --no-link --print-out-paths .#fnordlauncher \
             | tee -a "$GITHUB_STEP_SUMMARY" \
-            | xargs cachix pin unmojang "$TAG"-"$SYSTEM"
+            | xargs cachix pin ashley-graves "$TAG"-"$SYSTEM"
