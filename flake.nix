@@ -165,7 +165,7 @@
 
           # Grab our packages from it and set the default
           packages = {
-            inherit (fnordPackages) fnordlauncher-unwrapped fjordlauncher;
+            inherit (fnordPackages) fnordlauncher-unwrapped fnordlauncher;
             default = fnordPackages.fnordlauncher;
           };
         in

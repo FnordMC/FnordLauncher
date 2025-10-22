@@ -47,10 +47,10 @@ assert lib.assertMsg (
   textToSpeechSupport -> stdenv.hostPlatform.isLinux
 ) "textToSpeechSupport only has an effect on Linux.";
 let
-  fnordlauncher' = fjordlauncher-unwrapped.override { inherit msaClientID gamemodeSupport; };
+  fnordlauncher' = fnordlauncher-unwrapped.override { inherit msaClientID gamemodeSupport; };
 in
 symlinkJoin {
-  name = "fnordlauncher-${fjordlauncher'.version}";
+  name = "fnordlauncher-${fnordlauncher'.version}";
 
   paths = [ fnordlauncher' ];
 
@@ -107,7 +107,7 @@ symlinkJoin {
         xrandr # needed for LWJGL [2.9.2, 3) https://github.com/LWJGL/lwjgl/issues/128
       ] ++ additionalPrograms;
     in
-    [ "--prefix FJORDLAUNCHER_JAVA_PATHS : ${lib.makeSearchPath "bin/java" jdks}" ]
+    [ "--prefix FNORDLAUNCHER_JAVA_PATHS : ${lib.makeSearchPath "bin/java" jdks}" ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       "--set LD_LIBRARY_PATH ${addDriverRunpath.driverLink}/lib:${lib.makeLibraryPath runtimeLibs}"
       "--prefix PATH : ${lib.makeBinPath runtimePrograms}"
