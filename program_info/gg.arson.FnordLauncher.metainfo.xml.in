@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>org.unmojang.FnordLauncher</id>
-  <launchable type="desktop-id">org.unmojang.FnordLauncher.desktop</launchable>
+  <id>gg.arson.FnordLauncher</id>
+  <launchable type="desktop-id">gg.arson.FnordLauncher.desktop</launchable>
   <name>Fnord Launcher</name>
   <developer_name>fn2006</developer_name>
   <summary>A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
-  <url type="homepage">https://github.com/unmojang/FnordLauncher</url>
-  <url type="bugtracker">https://github.com/unmojang/FnordLauncher/issues</url>
+  <url type="homepage">https://github.com/ashley-graves/FnordLauncher</url>
+  <url type="bugtracker">https://github.com/ashley-graves/FnordLauncher/issues</url>
   <description>
     <p>Fnord Launcher is a custom launcher for Minecraft that focuses on predictability, long term stability and simplicity.</p>
     <p>Features:</p>

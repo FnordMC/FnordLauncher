@@ -146,7 +146,7 @@ void AccountListPage::on_actionAddAuthlibInjector_triggered()
     MinecraftAccountPtr account = AuthlibInjectorLoginDialog::newAccount(
         this, tr("Please enter your username (sometimes an email address), password, and the URL of your API server."
                  "<br>"
-                 "See <a href=\"https://github.com/unmojang/FnordLauncher/blob/develop/doc/alternative-auth-servers.md\">this page</a> in "
+                 "See <a href=\"https://github.com/ashley-graves/FjordLauncher/blob/develop/doc/alternative-auth-servers.md\">this page</a> in "
                  "the Fnord Launcher repository for a list of common API servers."
                  "<br><br>"
                  "<b>Caution!</b> Your username and password will be sent to the authentication server you specify!"));

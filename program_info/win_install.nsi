@@ -110,7 +110,7 @@ VIProductVersion "9.4.2.0"
 VIFileVersion "9.4.2.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "Fnord Launcher"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Fnord Launcher Installer"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "© 2024-2025 Fnord Launcher Contributors\n© 2022-2024 PollyMC Contributors\n© 2022-2025 Prism Launcher Contributors\n© 2021-2022 PolyMC Contributors\n© 2012-2021 MultiMC Contributors"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "© 2024-2025 Fnord Launcher Contributors\n© 2024-2025 Fjord Launcher Contributors\n© 2022-2024 PollyMC Contributors\n© 2022-2025 Prism Launcher Contributors\n© 2021-2022 PolyMC Contributors\n© 2012-2021 MultiMC Contributors"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "9.4.2.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductVersion" "9.4.2.0"
 

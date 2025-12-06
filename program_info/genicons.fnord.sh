@@ -10,7 +10,7 @@ svg2png() {
 }
 
 if command -v "svgo"; then
-    svgo org.unmojang.FnordLauncher.Source.svg -o org.unmojang.FnordLauncher.svg
+    svgo gg.arson.FnordLauncher.Source.svg -o gg.arson.FnordLauncher.svg
 else
     echo 'ERROR: svgo not in $PATH'
 fi
@@ -19,15 +19,17 @@ if command -v "inkscape" && command -v "icotool"; then
     # Windows ICO
     d=$(mktemp -d)
 
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_16.png" 16 16
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_24.png" 24 24
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_32.png" 32 32
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_48.png" 48 48
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_64.png" 64 64
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_128.png" 128 128
-    svg2png org.unmojang.FnordLauncher.svg "$d/fnordlauncher_256.png" 256 256
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_16.png" 16 16
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_24.png" 24 24
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_32.png" 32 32
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_48.png" 48 48
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_64.png" 64 64
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_128.png" 128 128
+    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_256.png" 256 256
 
-    rm fnordlauncher.ico && icotool -o fnordlauncher.ico -c \
+    rm fnordlauncher.ico 2>/dev/null
+
+    icotool -o fnordlauncher.ico -c \
         "$d/fnordlauncher_256.png"  \
         "$d/fnordlauncher_128.png"  \
         "$d/fnordlauncher_64.png"   \
@@ -48,20 +50,20 @@ if command -v "inkscape" && command -v "magick"; then
 
     mkdir -p "$d"
 
-    svg2png org.unmojang.FnordLauncher.bigsur.svg "$d/icon_512x512@2.png" 1024 1024
-    magick convert "$d/icon_512x512@2.png" -resize 16x16 "$d/icon_16x16.png"
-    magick convert "$d/icon_512x512@2.png" -resize 32x32 "$d/icon_16x16@2.png"
-    magick convert "$d/icon_512x512@2.png" -resize 32x32 "$d/icon_32x32.png"
-    magick convert "$d/icon_512x512@2.png" -resize 64x64 "$d/icon_32x32@2.png"
-    magick convert "$d/icon_512x512@2.png" -resize 128x128 "$d/icon_128x128.png"
-    magick convert "$d/icon_512x512@2.png" -resize 256x256 "$d/icon_128x128@2.png"
-    magick convert "$d/icon_512x512@2.png" -resize 256x256 "$d/icon_256x256.png"
-    magick convert "$d/icon_512x512@2.png" -resize 512x512 "$d/icon_256x256@2.png"
-    magick convert "$d"/* fnordlauncher.icns
+    svg2png gg.arson.FnordLauncher.svg "$d/icon_512x512@2.png" 1024 1024
+    magick "$d/icon_512x512@2.png" -resize 16x16 "$d/icon_16x16.png"
+    magick "$d/icon_512x512@2.png" -resize 32x32 "$d/icon_16x16@2.png"
+    magick "$d/icon_512x512@2.png" -resize 32x32 "$d/icon_32x32.png"
+    magick "$d/icon_512x512@2.png" -resize 64x64 "$d/icon_32x32@2.png"
+    magick "$d/icon_512x512@2.png" -resize 128x128 "$d/icon_128x128.png"
+    magick "$d/icon_512x512@2.png" -resize 256x256 "$d/icon_128x128@2.png"
+    magick "$d/icon_512x512@2.png" -resize 256x256 "$d/icon_256x256.png"
+    magick "$d/icon_512x512@2.png" -resize 512x512 "$d/icon_256x256@2.png"
+    magick "$d"/* fnordlauncher.icns
 else
     echo 'ERROR: macOS icons were NOT generated!' >&2
     echo 'ERROR: requires inkscape and magick in $PATH'
 fi
 
 # replace icon in themes
-cp -v org.unmojang.FnordLauncher.svg "../launcher/resources/multimc/scalable/launcher.svg"
+cp -v gg.arson.FnordLauncher.svg "../launcher/resources/multimc/scalable/launcher.svg"

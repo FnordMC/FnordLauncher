@@ -69,11 +69,11 @@ variables, besides other common Qt variables:
 
 # BUGS
 
-https://github.com/unmojang/FnordLauncher/issues
+https://github.com/ashley-graves/FnordLauncher/issues
 
 # RESOURCES
 
-GitHub: https://github.com/unmojang/FnordLauncher
+GitHub: https://github.com/ashley-graves/FnordLauncher
 
 # AUTHORS
 
@@ -84,5 +84,7 @@ PolyMC Contributors
 PollyMC Contributors
 
 Prism Launcher Contributors
+
+Fjord Launcher Contributors
 
 Fnord Launcher Contributors

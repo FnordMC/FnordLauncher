@@ -1,4 +1,4 @@
-# <img src="./program_info/org.unmojang.FnordLauncher.svg" alt="Fnord Launcher logo" width="96"/> Fnord Launcher
+# <img src="./program_info/gg.arson.FnordLauncher.svg" alt="Fnord Launcher logo" width="96"/> Fnord Launcher
 
 Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/FjordLauncher).
 
@@ -19,6 +19,13 @@ You can get installers or portable builds from the [releases section](https://gi
 ### macOS
 
 There are builds for macOS in the [releases section](https://github.com/ashley-graves/FnordLauncher/releases/latest).
+
+### Flatpak
+
+```Shell
+flatpak remote-add --user --if-not-exists unmojang https://fnord.github.io/fnord-flatpak/index.flatpakrepo
+flatpak install org.unmojang.FjordLauncher
+```
 
 ### Nix
 
