@@ -9,10 +9,10 @@ svg2png() {
     inkscape -w "$width" -h "$height" -o "$output_file" "$input_file"
 }
 
-if command -v "svgo"; then
-    svgo gg.arson.FnordLauncher.Source.svg -o gg.arson.FnordLauncher.svg
+if command -v "scour"; then
+    scour -i gg.arson.FnordLauncher.Source.svg -o gg.arson.FnordLauncher.svg
 else
-    echo 'ERROR: svgo not in $PATH'
+    echo 'ERROR: scour not in $PATH'
 fi
 
 if command -v "inkscape" && command -v "icotool"; then
