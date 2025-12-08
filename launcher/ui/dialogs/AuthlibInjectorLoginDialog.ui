@@ -58,6 +58,9 @@
      <property name="placeholderText">
        <string>https://example.com/authlib-injector</string>
      </property>
+     <property name="text">
+       <string>https://mc.arson.gg/authlib-injector</string>
+     </property>
     </widget>
    </item>
     <item>
