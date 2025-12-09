@@ -12,6 +12,11 @@
     </thead>
     <tbody>
         <tr>
+            <td><a href="https://mc.arson.gg">Drasl</a></td>
+            <td>Also self-hostable. The public instance requires a Minecraft account to register.</td>
+            <td>https://mc.arson.gg/authlib-injector</td>
+        </tr>
+        <tr>
             <td><a href="https://ely.by">Ely.by</a></td>
             <td>Licensed under <a href="https://github.com/elyby/accounts">Apache-2.0</a>, but not intended for self-hosting. If using 2FA, you must append the code to the end of your password during login in the format "password:code".</td>
             <td>https://account.ely.by/api/authlib-injector</td>
@@ -25,11 +30,6 @@
             <td><a href="https://littleskin.cn">LittleSkin</a></td>
             <td>Another popular instance of Blessing Skin.</td>
             <td>https://littleskin.cn/api/yggdrasil</td>
-        </tr>
-        <tr>
-            <td><a href="https://mc.arson.gg">Drasl</a></td>
-            <td>Also self-hostable. The public instance requires a Minecraft account to register.</td>
-            <td>https://mc.arson.gg/authlib-injector</td>
         </tr>
     </tbody>
 </table>
