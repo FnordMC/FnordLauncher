@@ -8,7 +8,7 @@ Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/Fjo
 
 ## Having a problem with the launcher?
 
-**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fnord Launcher in the Prism Launcher Discord server. Instead, ask in #fnord-launcher in our [Matrix space](https://matrix.to/#/#unmojang:matrix.org), or [open an issue](https://github.com/fnordmc/FnordLauncher/issues), in this repository.
+**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fnord Launcher in the Prism Launcher Discord server. Instead, ask in #fnordlauncher on libera.chat, or [open an issue](https://github.com/fnordmc/FnordLauncher/issues), in this repository.
 
 ## Installation
 
@@ -19,13 +19,6 @@ You can get installers or portable builds from the [releases section](https://gi
 ### macOS
 
 There are builds for macOS in the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest).
-
-### Flatpak
-
-```Shell
-flatpak remote-add --user --if-not-exists unmojang https://fnord.github.io/fnord-flatpak/index.flatpakrepo
-flatpak install org.unmojang.FjordLauncher
-```
 
 ### Nix
 
