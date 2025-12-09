@@ -8,17 +8,17 @@ Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/Fjo
 
 ## Having a problem with the launcher?
 
-**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fnord Launcher in the Prism Launcher Discord server. Instead, ask in #fnord-launcher in our [Matrix space](https://matrix.to/#/#unmojang:matrix.org), or [open an issue](https://github.com/ashley-graves/FnordLauncher/issues), in this repository.
+**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fnord Launcher in the Prism Launcher Discord server. Instead, ask in #fnord-launcher in our [Matrix space](https://matrix.to/#/#unmojang:matrix.org), or [open an issue](https://github.com/fnordmc/FnordLauncher/issues), in this repository.
 
 ## Installation
 
 ### Windows
 
-You can get installers or portable builds from the [releases section](https://github.com/ashley-graves/FnordLauncher/releases/latest), MSVC builds are recommended over MinGW builds, but there's no real difference.
+You can get installers or portable builds from the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest), MSVC builds are recommended over MinGW builds, but there's no real difference.
 
 ### macOS
 
-There are builds for macOS in the [releases section](https://github.com/ashley-graves/FnordLauncher/releases/latest).
+There are builds for macOS in the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest).
 
 ### Flatpak
 
@@ -32,14 +32,14 @@ flatpak install org.unmojang.FjordLauncher
 This repository contains a Nix flake:
 
 ```Shell
-nix run github:ashley-graves/FnordLauncher
+nix run github:fnordmc/FnordLauncher
 ```
 
 See [nix/README.md](nix/README.md) for details.
 
 ### Other Linux
 
-AppImages are available in the [releases section](https://github.com/ashley-graves/FnordLauncher/releases/latest).
+AppImages are available in the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest).
 
 ## Building
 

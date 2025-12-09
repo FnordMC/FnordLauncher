@@ -20,7 +20,7 @@ set(Launcher_Copyright "${Launcher_Copyright}" PARENT_SCOPE)
 set(Launcher_Domain "unmojang.org" PARENT_SCOPE)
 set(Launcher_UserAgent "${Launcher_CommonName}/${Launcher_VERSION_NAME}" PARENT_SCOPE)
 set(Launcher_ConfigFile "fnordlauncher.cfg" PARENT_SCOPE)
-set(Launcher_Git "https://github.com/ashley-graves/fjordLauncher" PARENT_SCOPE)
+set(Launcher_Git "https://github.com/fnordmc/FnordLauncher" PARENT_SCOPE)
 set(Launcher_DesktopFileName "gg.arson.FnordLauncher.desktop" PARENT_SCOPE)
 set(Launcher_SVGFileName "gg.arson.FnordLauncher.svg" PARENT_SCOPE)
 

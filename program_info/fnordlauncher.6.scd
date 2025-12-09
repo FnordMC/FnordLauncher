@@ -69,11 +69,11 @@ variables, besides other common Qt variables:
 
 # BUGS
 
-https://github.com/ashley-graves/FnordLauncher/issues
+https://github.com/fnordmc/FnordLauncher/issues
 
 # RESOURCES
 
-GitHub: https://github.com/ashley-graves/FnordLauncher
+GitHub: https://github.com/fnordmc/FnordLauncher
 
 # AUTHORS
 
