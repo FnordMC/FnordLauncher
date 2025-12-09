@@ -27,9 +27,9 @@
             <td>https://littleskin.cn/api/yggdrasil</td>
         </tr>
         <tr>
-            <td><a href="https://drasl.unmojang.org">Drasl</a></td>
+            <td><a href="https://mc.arson.gg">Drasl</a></td>
             <td>Also self-hostable. The public instance requires a Minecraft account to register.</td>
-            <td>https://drasl.unmojang.org/authlib-injector</td>
+            <td>https://mc.arson.gg/authlib-injector</td>
         </tr>
     </tbody>
 </table>
