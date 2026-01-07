@@ -61,6 +61,8 @@ class Config {
     int VERSION_MINOR;
     /// The patch version number.
     int VERSION_PATCH;
+    /// The downstream version number, used by Fjord Launcher
+    int VERSION_DOWNSTREAM;
 
     /**
      * The version channel

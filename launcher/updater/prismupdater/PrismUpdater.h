@@ -122,6 +122,7 @@ class PrismUpdaterApp : public QApplication {
     int m_prismVersionMajor = -1;
     int m_prismVersionMinor = -1;
     int m_prismVersionPatch = -1;
+    int m_prismVersionDownstream = -1;
     QString m_prsimVersionChannel;
     QString m_prismGitCommit;
 
