@@ -252,7 +252,7 @@ void LauncherPage::applySettings()
     s->set("SkipModpackUpdatePrompt", !ui->modpackUpdatePromptBtn->isChecked());
 
     // authlib-injector
-    s->set("MissingAuthlibInjectorBehavior", !ui->missingAIComboBox->currentData().toInt());
+    s->set("MissingAuthlibInjectorBehavior", ui->missingAIComboBox->currentData().toInt());
 }
 void LauncherPage::loadSettings()
 {
@@ -302,6 +302,14 @@ void LauncherPage::loadSettings()
     ui->metadataWarningLabel->setHidden(ui->metadataEnableBtn->isChecked());
     ui->dependenciesEnableBtn->setChecked(!s->get("ModDependenciesDisabled").toBool());
     ui->modpackUpdatePromptBtn->setChecked(!s->get("SkipModpackUpdatePrompt").toBool());
+
+    // Missing authlib-injector behavior
+    int missingAI = s->get("MissingAuthlibInjectorBehavior").toInt();
+    int missingAIIndex = ui->missingAIComboBox->findData(missingAI);
+    if (missingAIIndex == -1) {
+        missingAIIndex = ui->missingAIComboBox->findData(MissingAuthlibInjectorBehavior::Ask);
+    }
+    ui->missingAIComboBox->setCurrentIndex(missingAIIndex);
 }
 
 void LauncherPage::retranslate()
