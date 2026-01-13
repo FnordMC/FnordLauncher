@@ -63,7 +63,6 @@ APIPage::APIPage(QWidget* parent) : QWidget(parent), ui(new Ui::APIPage)
     static const QRegularExpression s_validUrlRegExp("https?://.+");
     static const QRegularExpression s_validMSAClientID(
         QRegularExpression::anchoredPattern(".+"));
-    static const QRegularExpression s_validFlameKey(QRegularExpression::anchoredPattern("\\$2[ayb]\\$.{56}"));
 
     ui->setupUi(this);
 
@@ -80,7 +79,6 @@ APIPage::APIPage(QWidget* parent) : QWidget(parent), ui(new Ui::APIPage)
     ui->resourceURL->setValidator(new QRegularExpressionValidator(s_validUrlRegExp, ui->resourceURL));
     ui->baseURLEntry->setValidator(new QRegularExpressionValidator(s_validUrlRegExp, ui->baseURLEntry));
     ui->msaClientID->setValidator(new QRegularExpressionValidator(s_validMSAClientID, ui->msaClientID));
-    ui->flameKey->setValidator(new QRegularExpressionValidator(s_validFlameKey, ui->flameKey));
 
     ui->metaURL->setPlaceholderText(BuildConfig.META_URL);
     ui->userAgentLineEdit->setPlaceholderText(BuildConfig.USER_AGENT);
