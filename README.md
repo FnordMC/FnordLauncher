@@ -44,6 +44,7 @@ There are builds for macOS in the [releases section](https://github.com/unmojang
 
 ```Shell
 flatpak remote-add --user --if-not-exists unmojang https://unmojang.github.io/unmojang-flatpak/index.flatpakrepo
+flatpak install org.kde.Platform/x86_64/6.10
 flatpak install org.unmojang.FjordLauncher
 ```
 
