@@ -850,7 +850,7 @@ SET(LAUNCHER_SOURCES
     resources/flat_white/flat_white.qrc
     resources/documents/documents.qrc
     resources/shaders/shaders.qrc
-    "${CMAKE_CURRENT_BINARY_DIR}/../../${Launcher_Branding_LogoQRC}"
+    "${CMAKE_CURRENT_BINARY_DIR}/../${Launcher_Branding_LogoQRC}"
 
     # Icons
     icons/MMCIcon.h
@@ -1326,7 +1326,7 @@ qt_add_resources(LAUNCHER_RESOURCES
     resources/flat/flat.qrc
     resources/documents/documents.qrc
     resources/shaders/shaders.qrc
-    "${CMAKE_CURRENT_BINARY_DIR}/../../${Launcher_Branding_LogoQRC}"
+    "${CMAKE_CURRENT_BINARY_DIR}/../${Launcher_Branding_LogoQRC}"
 )
 
 qt_wrap_ui(PRISMUPDATER_UI
