@@ -123,69 +123,6 @@ PrismUpdaterApp::PrismUpdaterApp(int& argc, char** argv) : QApplication(argc, ar
 
     logToConsole = parser.isSet("debug");
 
-<<<<<<< HEAD
-    auto updater_executable = QCoreApplication::applicationFilePath();
-
-#ifdef Q_OS_MACOS
-    showFatalErrorMessage(tr("MacOS Not Supported"), tr("The updater does not support installations on MacOS"));
-#endif
-
-    if (updater_executable.startsWith("/tmp/.mount_")) {
-        m_isAppimage = true;
-        m_appimagePath = QProcessEnvironment::systemEnvironment().value(QStringLiteral("APPIMAGE"));
-        if (m_appimagePath.isEmpty()) {
-            showFatalErrorMessage(tr("Unsupported Installation"),
-                                  tr("Updater is running as misconfigured AppImage? ($APPIMAGE environment variable is missing)"));
-        }
-    }
-
-    m_isFlatpak = DesktopServices::isFlatpak();
-
-    QString prism_executable = FS::PathCombine(applicationDirPath(), BuildConfig.LAUNCHER_APP_BINARY_NAME);
-#if defined Q_OS_WIN32
-    prism_executable.append(".exe");
-#endif
-
-    if (!QFileInfo(prism_executable).isFile()) {
-        showFatalErrorMessage(tr("Unsupported Installation"), tr("The updater can not find the main executable."));
-    }
-
-    m_prismExecutable = prism_executable;
-
-    auto prism_update_url = parser.value("update-url");
-    if (prism_update_url.isEmpty())
-        prism_update_url = BuildConfig.UPDATER_GITHUB_REPO;
-
-    m_prismRepoUrl = QUrl::fromUserInput(prism_update_url);
-
-    m_checkOnly = parser.isSet("check-only");
-    m_forceUpdate = parser.isSet("force");
-    m_printOnly = parser.isSet("list");
-    auto user_version = parser.value("install-version");
-    if (!user_version.isEmpty()) {
-        m_userSelectedVersion = Version(user_version);
-    }
-    m_selectUI = parser.isSet("select-ui");
-    m_allowDowngrade = parser.isSet("allow-downgrade");
-
-    auto version = parser.value("fnordlauncher-version");
-    if (!version.isEmpty()) {
-        if (version.contains('-')) {
-            auto index = version.indexOf('-');
-            m_prsimVersionChannel = version.mid(index + 1);
-            version = version.left(index);
-        } else {
-            m_prsimVersionChannel = "stable";
-        }
-        auto version_parts = version.split('.');
-        m_prismVersionMajor = version_parts.takeFirst().toInt();
-        m_prismVersionMinor = version_parts.takeFirst().toInt();
-    }
-
-    m_allowPreRelease = parser.isSet("pre-release");
-
-=======
->>>>>>> upstream/HEAD
     QString origCwdPath = QDir::currentPath();
     QString binPath = applicationDirPath();
 
@@ -1332,7 +1269,8 @@ GitHubRelease PrismUpdaterApp::getLatestRelease()
 
 bool PrismUpdaterApp::needUpdate(const GitHubRelease& release)
 {
-    auto current_ver = Version(QString("%1.%2.%3.%4").arg(m_prismVersionMajor).arg(m_prismVersionMinor).arg(m_prismVersionPatch).arg(m_prismVersionDownstream));
+    auto current_ver = Version(
+        QString("%1.%2.%3.%4").arg(m_prismVersionMajor).arg(m_prismVersionMinor).arg(m_prismVersionPatch).arg(m_prismVersionDownstream));
     return current_ver < release.version;
 }
 

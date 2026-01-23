@@ -92,24 +92,6 @@ jobs:
           prerelease: false
           fail_on_unmatched_files: true
           files: |
-<<<<<<< HEAD:.github/workflows/trigger_release.yml
-            FnordLauncher-Linux-Qt5-Portable-${{ env.VERSION }}.tar.gz
-            FnordLauncher-Linux-x86_64.AppImage
-            FnordLauncher-Linux-x86_64.AppImage.zsync
-            FnordLauncher-Linux-Qt6-Portable-${{ env.VERSION }}.tar.gz
-            FnordLauncher-Windows-MinGW-w64-${{ env.VERSION }}.zip
-            FnordLauncher-Windows-MinGW-w64-Portable-${{ env.VERSION }}.zip
-            FnordLauncher-Windows-MinGW-w64-Setup-${{ env.VERSION }}.exe
-            FnordLauncher-Windows-MSVC-arm64-${{ env.VERSION }}.zip
-            FnordLauncher-Windows-MSVC-arm64-Portable-${{ env.VERSION }}.zip
-            FnordLauncher-Windows-MSVC-arm64-Setup-${{ env.VERSION }}.exe
-            FnordLauncher-Windows-MSVC-${{ env.VERSION }}.zip
-            FnordLauncher-Windows-MSVC-Portable-${{ env.VERSION }}.zip
-            FnordLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
-            FnordLauncher-macOS-${{ env.VERSION }}.zip
-            FnordLauncher-macOS-Legacy-${{ env.VERSION }}.zip
-            FnordLauncher-${{ env.VERSION }}.tar.gz
-=======
             FnordLauncher-Linux-x86_64.AppImage
             FnordLauncher-Linux-x86_64.AppImage.zsync
             FnordLauncher-Linux-aarch64.AppImage
@@ -130,4 +112,3 @@ jobs:
             FnordLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
             FnordLauncher-macOS-${{ env.VERSION }}.zip
             FnordLauncher-${{ env.VERSION }}.tar.gz
->>>>>>> upstream/HEAD:.github/workflows/release.yml
