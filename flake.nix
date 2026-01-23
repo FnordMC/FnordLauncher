@@ -9,7 +9,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz";
 
     libnbtplusplus = {
       url = "github:PrismLauncher/libnbtplusplus";
@@ -114,7 +114,13 @@
 
         {
           default = pkgs.mkShell {
+<<<<<<< HEAD
             inputsFrom = [ packages'.fnordlauncher-unwrapped ];
+=======
+            name = "fjord-launcher";
+
+            inputsFrom = [ packages'.fjordlauncher-unwrapped ];
+>>>>>>> upstream/HEAD
 
             packages = with pkgs; [
               ccache

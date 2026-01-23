@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+<<<<<<<< HEAD:program_info/fnordlauncher.qrc
+        <file>gg.arson.FnordLauncher.svg</file>
+========
+        <file>@Launcher_AppID@.svg</file>
+>>>>>>>> upstream/HEAD:program_info/fjordlauncher.qrc.in
+    </qresource>
+</RCC>

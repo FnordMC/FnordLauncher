@@ -8,7 +8,11 @@ Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/Fjo
 
 ## Having a problem with the launcher?
 
+<<<<<<< HEAD
 **Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fnord Launcher in the Prism Launcher Discord server. Instead, ask in #fnordlauncher on libera.chat, or [open an issue](https://github.com/fnordmc/FnordLauncher/issues), in this repository.
+=======
+**Do not** open an issue in the Prism Launcher repo, and **do not** ask about Fjord Launcher in the Prism Launcher Discord server. Instead, ask in #fjord-launcher in our [Matrix space](https://matrix.to/#/#unmojang:matrix.org), or [open an issue](https://github.com/unmojang/FjordLauncher/issues), in this repository.
+>>>>>>> upstream/HEAD
 
 ## Installation
 
@@ -18,7 +22,50 @@ You can get installers or portable builds from the [releases section](https://gi
 
 ### macOS
 
+<<<<<<< HEAD
 There are builds for macOS in the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest).
+=======
+#### [Homebrew](https://brew.sh) (recommended)
+
+```Shell
+brew tap unmojang/homebrew-unmojang
+brew install --cask fjordlauncher
+```
+
+#### macOS (Manual)
+
+There are builds for macOS in the [releases section](https://github.com/unmojang/FjordLauncher/releases/latest).
+
+### Flatpak
+
+```Shell
+flatpak remote-add --user --if-not-exists unmojang https://unmojang.github.io/unmojang-flatpak/index.flatpakrepo
+flatpak install org.kde.Platform/x86_64/6.10
+flatpak install org.unmojang.FjordLauncher
+```
+
+### Arch Linux
+
+Fjord Launcher is [available](https://aur.archlinux.org/packages?O=0&K=fjordlauncher) from the AUR:
+
+```Shell
+paru -S fjordlauncher
+paru -S fjordlauncher-git # build latest Git commit from source
+```
+
+`fjordlauncher` is available in [Chaotic-AUR](https://aur.chaotic.cx/).
+
+The `fjordlauncher-bin` AUR package is broken; see [https://github.com/unmojang/FjordLauncher/issues/20](https://github.com/unmojang/FjordLauncher/issues/20).
+
+### Debian/Ubuntu
+
+Install from the MPR with [Mist](https://docs.makedeb.org/using-the-mpr/mist-the-mpr-cli/#installing-mist):
+
+```Shell
+mist install fjordlauncher
+mist install fjordlauncher-git # build latest Git commit from source
+```
+>>>>>>> upstream/HEAD
 
 ### Nix
 
@@ -36,12 +83,7 @@ AppImages are available in the [releases section](https://github.com/fnordmc/Fno
 
 ## Building
 
-To build the launcher yourself, follow the instructions on the Prism Launcher website, but clone this repo instead:
-
-- [Windows](https://prismlauncher.org/wiki/development/build-instructions/windows/)
-- [Linux](https://prismlauncher.org/wiki/development/build-instructions/linux/)
-- [MacOS](https://prismlauncher.org/wiki/development/build-instructions/macos/)
-- [OpenBSD](https://prismlauncher.org/wiki/development/build-instructions/openbsd/)
+To build the launcher yourself, follow the [instructions on the Prism Launcher website](https://prismlauncher.org/wiki/development/build-instructions), but clone this repo instead.
 
 ## Notes
 

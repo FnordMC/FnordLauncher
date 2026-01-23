@@ -44,12 +44,10 @@
 
 #include <QDebug>
 
-#include "net/NetJob.h"
-
 #include "ui/dialogs/AuthlibInjectorLoginDialog.h"
+#include "ui/dialogs/ChooseOfflineNameDialog.h"
 #include "ui/dialogs/CustomMessageBox.h"
 #include "ui/dialogs/MSALoginDialog.h"
-#include "ui/dialogs/OfflineLoginDialog.h"
 
 #include "Application.h"
 
@@ -173,16 +171,19 @@ void AccountListPage::on_actionAddOffline_triggered()
 {
     if (!m_accounts->anyAccountIsValid()) {
         QMessageBox::warning(this, tr("Error"),
-                             tr("You must add a Microsoft or Mojang account that owns Minecraft before you can add an offline account."
+                             tr("You must add a Microsoft account that owns Minecraft before you can add an offline account."
                                 "<br><br>"
                                 "If you have lost your account you can contact Microsoft for support."));
         return;
     }
 
-    MinecraftAccountPtr account =
-        OfflineLoginDialog::newAccount(this, tr("Please enter your desired username to add your offline account."));
+    ChooseOfflineNameDialog dialog(tr("Please enter your desired username to add your offline account."), this);
+    if (dialog.exec() != QDialog::Accepted) {
+        return;
+    }
 
-    if (account) {
+    if (const MinecraftAccountPtr account = MinecraftAccount::createOffline(dialog.getUsername())) {
+        account->login()->start();  // The task will complete here.
         m_accounts->addAccount(account);
         if (m_accounts->count() == 1) {
             m_accounts->setDefaultAccount(account);
