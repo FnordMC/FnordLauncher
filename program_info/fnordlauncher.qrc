@@ -1,0 +1,6 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>gg.arson.FnordLauncher.svg</file>
+    </qresource>
+</RCC>
