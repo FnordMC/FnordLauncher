@@ -1,5 +1,5 @@
 name: Package for Linux
-description: Create Linux packages for Fjord Launcher
+description: Create Linux packages for Fnord Launcher
 
 inputs:
   version:
@@ -78,20 +78,20 @@ runs:
         # FIXME(@getchoo): gamemode doesn't seem to be very portable with DBus. Find a way to make it work!
         find "$INSTALL_APPIMAGE_DIR" -name '*gamemode*' -exec rm {} +
 
-        ln -s org.unmojang.FjordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/org.unmojang.FjordLauncher.appdata.xml
-        ln -s share/applications/org.unmojang.FjordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
-        ln -s share/icons/hicolor/256x256/apps/org.unmojang.FjordLauncher.png "$INSTALL_APPIMAGE_DIR"
+        ln -s gg.arson.FnordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/gg.arson.FnordLauncher.appdata.xml
+        ln -s share/applications/gg.arson.FnordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
+        ln -s share/icons/hicolor/256x256/apps/gg.arson.FnordLauncher.png "$INSTALL_APPIMAGE_DIR"
         mv "$INSTALL_APPIMAGE_DIR"/{sharun,AppRun}
         ls -la "$INSTALL_APPIMAGE_DIR"
 
         if [[ "${{ github.ref_type }}" == "tag" ]]; then
-          APPIMAGE_DEST="FjordLauncher-Linux-$APPIMAGE_ARCH.AppImage"
+          APPIMAGE_DEST="FnordLauncher-Linux-$APPIMAGE_ARCH.AppImage"
         else
-          APPIMAGE_DEST="FjordLauncher-Linux-$VERSION-${{ inputs.build-type }}-$APPIMAGE_ARCH.AppImage"
+          APPIMAGE_DEST="FnordLauncher-Linux-$VERSION-${{ inputs.build-type }}-$APPIMAGE_ARCH.AppImage"
         fi
 
         mkappimage \
-          --updateinformation "gh-releases-zsync|${{ github.repository_owner }}|${{ github.event.repository.name }}|latest|FjordLauncher-Linux-$APPIMAGE_ARCH.AppImage.zsync" \
+          --updateinformation "gh-releases-zsync|${{ github.repository_owner }}|${{ github.event.repository.name }}|latest|FnordLauncher-Linux-$APPIMAGE_ARCH.AppImage.zsync" \
           "$INSTALL_APPIMAGE_DIR" \
           "$APPIMAGE_DEST"
 
@@ -116,22 +116,22 @@ runs:
 
         for l in $(find ${{ env.INSTALL_PORTABLE_DIR }} -type f -o -type l); do l=${l#$(pwd)/}; l=${l#${{ env.INSTALL_PORTABLE_DIR }}/}; l=${l#./}; echo $l; done > ${{ env.INSTALL_PORTABLE_DIR }}/manifest.txt
         cd ${{ env.INSTALL_PORTABLE_DIR }}
-        tar -czf ../FjordLauncher-portable.tar.gz *
+        tar -czf ../FnordLauncher-portable.tar.gz *
 
     - name: Upload binary tarball
       uses: actions/upload-artifact@v6
       with:
-        name: FjordLauncher-${{ inputs.artifact-name }}-Qt6-Portable-${{ inputs.version }}-${{ inputs.build-type }}
-        path: FjordLauncher-portable.tar.gz
+        name: FnordLauncher-${{ inputs.artifact-name }}-Qt6-Portable-${{ inputs.version }}-${{ inputs.build-type }}
+        path: FnordLauncher-portable.tar.gz
 
     - name: Upload AppImage
       uses: actions/upload-artifact@v6
       with:
-        name: FjordLauncher-${{ runner.os }}-${{ inputs.version }}-${{ inputs.build-type }}-${{ env.APPIMAGE_ARCH }}.AppImage
-        path: FjordLauncher-${{ runner.os }}-*${{ env.APPIMAGE_ARCH }}.AppImage
+        name: FnordLauncher-${{ runner.os }}-${{ inputs.version }}-${{ inputs.build-type }}-${{ env.APPIMAGE_ARCH }}.AppImage
+        path: FnordLauncher-${{ runner.os }}-*${{ env.APPIMAGE_ARCH }}.AppImage
 
     - name: Upload AppImage Zsync
       uses: actions/upload-artifact@v6
       with:
-        name: FjordLauncher-${{ runner.os }}-${{ inputs.version }}-${{ inputs.build-type }}-${{ env.APPIMAGE_ARCH }}.AppImage.zsync
-        path: FjordLauncher-${{ runner.os }}-*${{ env.APPIMAGE_ARCH }}.AppImage.zsync
+        name: FnordLauncher-${{ runner.os }}-${{ inputs.version }}-${{ inputs.build-type }}-${{ env.APPIMAGE_ARCH }}.AppImage.zsync
+        path: FnordLauncher-${{ runner.os }}-*${{ env.APPIMAGE_ARCH }}.AppImage.zsync

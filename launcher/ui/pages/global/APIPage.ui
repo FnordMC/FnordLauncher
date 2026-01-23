@@ -355,24 +355,7 @@
           <item>
            <widget class="QLabel" name="label_10">
             <property name="text">
-<<<<<<< HEAD
-             <string>Fetch Official Launcher's Key</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="2">
-           <widget class="QLabel" name="label_8">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Note: you probably don't need to set this if CurseForge already works.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Using the official CurseForge app's API key may break CurseForge's terms of service but should allow Fnord Launcher to download all mods in a modpack without you needing to download any of them manually.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-=======
-             <string>&lt;span style=&quot;font-weight:700;&quot;&gt;Using the official CurseForge app's API key may break CurseForge's terms of service but should allow Fjord Launcher to download all mods in a modpack without you needing to download any of them manually.&lt;/span&gt;</string>
->>>>>>> upstream/HEAD
+             <string>&lt;span style=&quot;font-weight:700;&quot;&gt;Using the official CurseForge app's API key may break CurseForge's terms of service but should allow Fnord Launcher to download all mods in a modpack without you needing to download any of them manually.&lt;/span&gt;</string>
             </property>
             <property name="wordWrap">
              <bool>true</bool>

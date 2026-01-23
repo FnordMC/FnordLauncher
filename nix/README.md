@@ -151,7 +151,7 @@ Example:
 {
   environment.systemPackages = [
     (import (
-      builtins.fetchTarball "https://github.com/FnordLauncher/FjordLauncher/archive/develop.tar.gz"
+      builtins.fetchTarball "https://github.com/fnordmc/FnordLauncher/archive/develop.tar.gz"
     )).packages.${pkgs.system}.fnordlauncher
   ];
 }
@@ -169,7 +169,7 @@ Example:
 {
   nixpkgs.overlays = [
     (import (
-      builtins.fetchTarball "https://github.com/FnordLauncher/FjordLauncher/archive/develop.tar.gz"
+      builtins.fetchTarball "https://github.com/fnordmc/FnordLauncher/archive/develop.tar.gz"
     )).overlays.default
   ];
 
@@ -208,6 +208,6 @@ The following parameters can be overridden:
 - `additionalPrograms` (default: `[ ]`) Additional libraries that will be added to `PATH`
 - `controllerSupport` (default: `isLinux`) Turn on/off support for controllers on Linux (macOS will always have this)
 - `gamemodeSupport` (default: `isLinux`) Turn on/off support for [Feral GameMode](https://github.com/FeralInteractive/gamemode) on Linux
-- `jdks` (default: `[ jdk21 jdk17 jdk8 ]`) Java runtimes added to `FJORDLAUNCHER_JAVA_PATHS` variable
+- `jdks` (default: `[ jdk21 jdk17 jdk8 ]`) Java runtimes added to `FNORDLAUNCHER_JAVA_PATHS` variable
 - `msaClientID` (default: `null`, requires full rebuild!) Client ID used for Microsoft Authentication
 - `textToSpeechSupport` (default: `isLinux`) Turn on/off support for text-to-speech on Linux (macOS will always have this)

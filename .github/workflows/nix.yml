@@ -121,13 +121,9 @@ jobs:
       - name: Build debug package
         if: ${{ env.DEBUG == 'true' }}
         run: |
-<<<<<<< HEAD
-          nix build --print-build-logs .#fnordlauncher-debug
-=======
           nix build \
             --no-link --print-build-logs --print-out-paths \
-            .#fjordlauncher-debug >> "$GITHUB_STEP_SUMMARY"
->>>>>>> upstream/HEAD
+            .#fnordlauncher-debug >> "$GITHUB_STEP_SUMMARY"
 
       - name: Build release package
         if: ${{ env.DEBUG == 'false' }}
@@ -135,11 +131,6 @@ jobs:
           TAG: ${{ github.ref_name }}
           SYSTEM: ${{ matrix.system }}
         run: |
-<<<<<<< HEAD
-          nix build --print-build-logs .#fnordlauncher
           nix build --no-link --print-out-paths .#fnordlauncher \
-=======
-          nix build --no-link --print-out-paths .#fjordlauncher \
->>>>>>> upstream/HEAD
             | tee -a "$GITHUB_STEP_SUMMARY" \
             | xargs cachix pin ashley-graves "$TAG"-"$SYSTEM"

@@ -33,24 +33,14 @@ jobs:
           echo "VERSION=$tag_name" >> $GITHUB_ENV
       - name: Package artifacts properly
         run: |
-<<<<<<< HEAD:.github/workflows/trigger_release.yml
           mv ${{ github.workspace }}/FnordLauncher-source FnordLauncher-${{ env.VERSION }}
           mv FnordLauncher-Linux-Qt6-Portable*/FnordLauncher-portable.tar.gz FnordLauncher-Linux-Qt6-Portable-${{ env.VERSION }}.tar.gz
-          mv FnordLauncher-Linux-Qt5-Portable*/FnordLauncher-portable.tar.gz FnordLauncher-Linux-Qt5-Portable-${{ env.VERSION }}.tar.gz
-          mv FnordLauncher-*.AppImage/FnordLauncher-*.AppImage FnordLauncher-Linux-x86_64.AppImage
-          mv FnordLauncher-*.AppImage.zsync/FnordLauncher-*.AppImage.zsync FnordLauncher-Linux-x86_64.AppImage.zsync
-          mv FnordLauncher-macOS-Legacy*/FnordLauncher.zip FnordLauncher-macOS-Legacy-${{ env.VERSION }}.zip
+          mv FnordLauncher-Linux-aarch64-Qt6-Portable*/FnordLauncher-portable.tar.gz FnordLauncher-Linux-aarch64-Qt6-Portable-${{ env.VERSION }}.tar.gz
+          mv FnordLauncher-*.AppImage/FnordLauncher-*-x86_64.AppImage FnordLauncher-Linux-x86_64.AppImage
+          mv FnordLauncher-*.AppImage.zsync/FnordLauncher-*-x86_64.AppImage.zsync FnordLauncher-Linux-x86_64.AppImage.zsync
+          mv FnordLauncher-*.AppImage/FnordLauncher-*-aarch64.AppImage FnordLauncher-Linux-aarch64.AppImage
+          mv FnordLauncher-*.AppImage.zsync/FnordLauncher-*-aarch64.AppImage.zsync FnordLauncher-Linux-aarch64.AppImage.zsync
           mv FnordLauncher-macOS*/FnordLauncher.zip FnordLauncher-macOS-${{ env.VERSION }}.zip
-=======
-          mv ${{ github.workspace }}/FjordLauncher-source FjordLauncher-${{ env.VERSION }}
-          mv FjordLauncher-Linux-Qt6-Portable*/FjordLauncher-portable.tar.gz FjordLauncher-Linux-Qt6-Portable-${{ env.VERSION }}.tar.gz
-          mv FjordLauncher-Linux-aarch64-Qt6-Portable*/FjordLauncher-portable.tar.gz FjordLauncher-Linux-aarch64-Qt6-Portable-${{ env.VERSION }}.tar.gz
-          mv FjordLauncher-*.AppImage/FjordLauncher-*-x86_64.AppImage FjordLauncher-Linux-x86_64.AppImage
-          mv FjordLauncher-*.AppImage.zsync/FjordLauncher-*-x86_64.AppImage.zsync FjordLauncher-Linux-x86_64.AppImage.zsync
-          mv FjordLauncher-*.AppImage/FjordLauncher-*-aarch64.AppImage FjordLauncher-Linux-aarch64.AppImage
-          mv FjordLauncher-*.AppImage.zsync/FjordLauncher-*-aarch64.AppImage.zsync FjordLauncher-Linux-aarch64.AppImage.zsync
-          mv FjordLauncher-macOS*/FjordLauncher.zip FjordLauncher-macOS-${{ env.VERSION }}.zip
->>>>>>> upstream/HEAD:.github/workflows/release.yml
 
           tar --exclude='.git' -czf FnordLauncher-${{ env.VERSION }}.tar.gz FnordLauncher-${{ env.VERSION }}
 
@@ -80,13 +70,13 @@ jobs:
             cd ..
           done
 
-          for d in FjordLauncher-Windows-MinGW-arm64*; do
+          for d in FnordLauncher-Windows-MinGW-arm64*; do
             cd "${d}" || continue
             INST="$(echo -n ${d} | grep -o Setup || true)"
             PORT="$(echo -n ${d} | grep -o Portable || true)"
-            NAME="FjordLauncher-Windows-MinGW-arm64"
+            NAME="FnordLauncher-Windows-MinGW-arm64"
             test -z "${PORT}" || NAME="${NAME}-Portable"
-            test -z "${INST}" || mv FjordLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
+            test -z "${INST}" || mv FnordLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
             test -n "${INST}" || zip -r -9 "../${NAME}-${{ env.VERSION }}.zip" *
             cd ..
           done
@@ -120,24 +110,24 @@ jobs:
             FnordLauncher-macOS-Legacy-${{ env.VERSION }}.zip
             FnordLauncher-${{ env.VERSION }}.tar.gz
 =======
-            FjordLauncher-Linux-x86_64.AppImage
-            FjordLauncher-Linux-x86_64.AppImage.zsync
-            FjordLauncher-Linux-aarch64.AppImage
-            FjordLauncher-Linux-aarch64.AppImage.zsync
-            FjordLauncher-Linux-Qt6-Portable-${{ env.VERSION }}.tar.gz
-            FjordLauncher-Linux-aarch64-Qt6-Portable-${{ env.VERSION }}.tar.gz
-            FjordLauncher-Windows-MinGW-w64-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MinGW-w64-Portable-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MinGW-w64-Setup-${{ env.VERSION }}.exe
-            FjordLauncher-Windows-MinGW-arm64-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MinGW-arm64-Portable-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MinGW-arm64-Setup-${{ env.VERSION }}.exe
-            FjordLauncher-Windows-MSVC-arm64-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MSVC-arm64-Portable-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MSVC-arm64-Setup-${{ env.VERSION }}.exe
-            FjordLauncher-Windows-MSVC-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MSVC-Portable-${{ env.VERSION }}.zip
-            FjordLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
-            FjordLauncher-macOS-${{ env.VERSION }}.zip
-            FjordLauncher-${{ env.VERSION }}.tar.gz
+            FnordLauncher-Linux-x86_64.AppImage
+            FnordLauncher-Linux-x86_64.AppImage.zsync
+            FnordLauncher-Linux-aarch64.AppImage
+            FnordLauncher-Linux-aarch64.AppImage.zsync
+            FnordLauncher-Linux-Qt6-Portable-${{ env.VERSION }}.tar.gz
+            FnordLauncher-Linux-aarch64-Qt6-Portable-${{ env.VERSION }}.tar.gz
+            FnordLauncher-Windows-MinGW-w64-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MinGW-w64-Portable-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MinGW-w64-Setup-${{ env.VERSION }}.exe
+            FnordLauncher-Windows-MinGW-arm64-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MinGW-arm64-Portable-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MinGW-arm64-Setup-${{ env.VERSION }}.exe
+            FnordLauncher-Windows-MSVC-arm64-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MSVC-arm64-Portable-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MSVC-arm64-Setup-${{ env.VERSION }}.exe
+            FnordLauncher-Windows-MSVC-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MSVC-Portable-${{ env.VERSION }}.zip
+            FnordLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
+            FnordLauncher-macOS-${{ env.VERSION }}.zip
+            FnordLauncher-${{ env.VERSION }}.tar.gz
 >>>>>>> upstream/HEAD:.github/workflows/release.yml

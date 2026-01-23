@@ -1,5 +1,5 @@
 name: Setup Dependencies
-description: Install and setup dependencies for building Fjord Launcher
+description: Install and setup dependencies for building Fnord Launcher
 
 inputs:
   build-type:

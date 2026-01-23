@@ -51,11 +51,7 @@ assert lib.assertMsg (
 ) "textToSpeechSupport only has an effect on Linux.";
 
 let
-<<<<<<< HEAD
-  fnordlauncher' = fnordlauncher-unwrapped.override { inherit msaClientID gamemodeSupport; };
-=======
-  fjordlauncher' = fjordlauncher-unwrapped.override { inherit msaClientID; };
->>>>>>> upstream/HEAD
+  fnordlauncher' = fnordlauncher-unwrapped.override { inherit msaClientID; };
 in
 
 symlinkJoin {

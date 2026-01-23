@@ -1,5 +1,5 @@
 name: Package for Windows
-description: Create a Windows package for Fjord Launcher
+description: Create a Windows package for Fnord Launcher
 
 inputs:
   version:
@@ -72,13 +72,13 @@ runs:
       uses: azure/trusted-signing-action@v0
       with:
         endpoint: https://eus.codesigning.azure.net/
-        trusted-signing-account-name: FjordLauncher
-        certificate-profile-name: FjordLauncher
+        trusted-signing-account-name: FnordLauncher
+        certificate-profile-name: FnordLauncher
 
         files: |
-          ${{ github.workspace }}\install\fjordlauncher.exe
-          ${{ github.workspace }}\install\fjordlauncher_filelink.exe
-          ${{ github.workspace }}\install\fjordlauncher_updater.exe
+          ${{ github.workspace }}\install\fnordlauncher.exe
+          ${{ github.workspace }}\install\fnordlauncher_filelink.exe
+          ${{ github.workspace }}\install\fnordlauncher_updater.exe
 
         # TODO(@getchoo): Is this all really needed???
         # https://github.com/Azure/trusted-signing-action/blob/fc390cf8ed0f14e248a542af1d838388a47c7a7c/docs/OIDC.md
@@ -144,11 +144,11 @@ runs:
       uses: azure/trusted-signing-action@v0
       with:
         endpoint: https://eus.codesigning.azure.net/
-        trusted-signing-account-name: FjordLauncher
-        certificate-profile-name: FjordLauncher
+        trusted-signing-account-name: FnordLauncher
+        certificate-profile-name: FnordLauncher
 
         files: |
-          ${{ github.workspace }}\FjordLauncher-Setup.exe
+          ${{ github.workspace }}\FnordLauncher-Setup.exe
 
         # TODO(@getchoo): Is this all really needed???
         # https://github.com/Azure/trusted-signing-action/blob/fc390cf8ed0f14e248a542af1d838388a47c7a7c/docs/OIDC.md
@@ -166,17 +166,17 @@ runs:
     - name: Upload binary zip
       uses: actions/upload-artifact@v6
       with:
-        name: FjordLauncher-${{ inputs.artifact-name }}-${{ inputs.version }}-${{ inputs.build-type }}
+        name: FnordLauncher-${{ inputs.artifact-name }}-${{ inputs.version }}-${{ inputs.build-type }}
         path: install/**
 
     - name: Upload portable zip
       uses: actions/upload-artifact@v6
       with:
-        name: FjordLauncher-${{ inputs.artifact-name }}-Portable-${{ inputs.version }}-${{ inputs.build-type }}
+        name: FnordLauncher-${{ inputs.artifact-name }}-Portable-${{ inputs.version }}-${{ inputs.build-type }}
         path: install-portable/**
 
     - name: Upload installer
       uses: actions/upload-artifact@v6
       with:
-        name: FjordLauncher-${{ inputs.artifact-name }}-Setup-${{ inputs.version }}-${{ inputs.build-type }}
-        path: FjordLauncher-Setup.exe
+        name: FnordLauncher-${{ inputs.artifact-name }}-Setup-${{ inputs.version }}-${{ inputs.build-type }}
+        path: FnordLauncher-Setup.exe

@@ -114,13 +114,9 @@
 
         {
           default = pkgs.mkShell {
-<<<<<<< HEAD
-            inputsFrom = [ packages'.fnordlauncher-unwrapped ];
-=======
-            name = "fjord-launcher";
+            name = "fnord-launcher";
 
-            inputsFrom = [ packages'.fjordlauncher-unwrapped ];
->>>>>>> upstream/HEAD
+            inputsFrom = [ packages'.fnordlauncher-unwrapped ];
 
             packages = with pkgs; [
               ccache

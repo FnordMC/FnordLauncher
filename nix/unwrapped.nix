@@ -38,13 +38,8 @@ let
 in
 
 stdenv.mkDerivation {
-<<<<<<< HEAD
   pname = "fnordlauncher-unwrapped";
-  version = "9.4-unstable-${date}";
-=======
-  pname = "fjordlauncher-unwrapped";
   version = "10.0-unstable-${date}";
->>>>>>> upstream/HEAD
 
   src = lib.fileset.toSource {
     root = ../.;

@@ -5,11 +5,7 @@
         <ws2:longPathAware>true</ws2:longPathAware>
     </windowsSettings>
   </application>
-<<<<<<< HEAD:program_info/fnordlauncher.manifest.in
-  <assemblyIdentity name="FnordLauncher.Application.1" type="win32" version="@Launcher_VERSION_NAME4@" />
-=======
   <assemblyIdentity name="@Launcher_CommonName@.Application.1" type="win32" version="@Launcher_VERSION_NAME4@" />
->>>>>>> upstream/HEAD:program_info/fjordlauncher.manifest.in
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
     <security>
       <requestedPrivileges>

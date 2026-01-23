@@ -6,9 +6,8 @@ body:
   attributes:
     value: |
       Before submitting a bug report, please make sure you have read this *entire* form, and that:
-      * You have read the [Fjord Launcher wiki](https://fjordlauncher.org/wiki/) and it has not answered your question.
       * Your bug is not caused by Minecraft or any mods you have installed.
-      * Your issue has not been reported before, [make sure to use the search function!](https://github.com/unmojang/FjordLauncher/issues)
+      * Your issue has not been reported before, [make sure to use the search function!](https://github.com/fnordmc/FnordLauncher/issues)
 
       **Do not forget to give your issue a descriptive title.** "Bug in the instance screen" makes it hard to distinguish issues at a glance.
 - type: dropdown
@@ -23,15 +22,15 @@ body:
     - Other
 - type: textarea
   attributes:
-    label: Version of Fjord Launcher
-    description: The version of Fjord Launcher used in the bug report.
-    placeholder: Fjord Launcher 5.1
+    label: Version of Fnord Launcher
+    description: The version of Fnord Launcher used in the bug report.
+    placeholder: Fnord Launcher 5.1
   validations:
     required: true
 - type: textarea
   attributes:
     label: Version of Qt
-    description: The version of Qt used in the bug report. You can find it in Help -> About Fjord Launcher -> About Qt.
+    description: The version of Qt used in the bug report. You can find it in Help -> About Fnord Launcher -> About Qt.
     placeholder: Qt 6.3.0
   validations:
     required: true

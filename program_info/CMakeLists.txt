@@ -14,7 +14,6 @@ set(Launcher_DisplayName "Fnord Launcher")
 set(Launcher_Name "${Launcher_CommonName}" PARENT_SCOPE)
 set(Launcher_DisplayName "${Launcher_DisplayName}" PARENT_SCOPE)
 
-<<<<<<< HEAD
 set(Launcher_Copyright "© 2025 Fnord Launcher Contributors\\n© 2024-2025 Fjord Launcher Contributors\\n© 2022-2024 PollyMC Contributors\\n© 2022-2025 Prism Launcher Contributors\\n© 2021-2022 PolyMC Contributors\\n© 2012-2021 MultiMC Contributors")
 set(Launcher_Copyright_Mac "© 2025 Fnord Launcher Contributors, © 2024-2024 Fjord Launcher Contributors, © 2022-2024 PollyMC Contributors, © 2022-2025 Prism Launcher Contributors, © 2021-2022 PolyMC Contributors and © 2012-2021 MultiMC Contributors" PARENT_SCOPE)
 set(Launcher_Copyright "${Launcher_Copyright}" PARENT_SCOPE)
@@ -31,49 +30,17 @@ set(Launcher_MetaInfo "program_info/gg.arson.FnordLauncher.metainfo.xml" PARENT_
 set(Launcher_SVG "program_info/gg.arson.FnordLauncher.svg" PARENT_SCOPE)
 set(Launcher_Branding_ICNS "program_info/fnordlauncher.icns" PARENT_SCOPE)
 set(Launcher_Branding_ICO "program_info/fnordlauncher.ico")
-=======
-set(Launcher_AppID "org.unmojang.FjordLauncher")
-set(Launcher_SVGFileName "${Launcher_AppID}.svg")
-set(Launcher_Copyright "© 2024-2026 Fjord Launcher Contributors\\n© 2022-2024 PollyMC Contributors\\n© 2022-2025 Prism Launcher Contributors\\n© 2021-2022 PolyMC Contributors\\n© 2012-2021 MultiMC Contributors")
-set(Launcher_Copyright_Mac "© 2024-2026 Fjord Launcher Contributors, © 2022-2024 PollyMC Contributors, © 2022-2025 Prism Launcher Contributors, © 2021-2022 PolyMC Contributors and © 2012-2021 MultiMC Contributors" PARENT_SCOPE)
-set(Launcher_Copyright "${Launcher_Copyright}" PARENT_SCOPE)
-set(Launcher_Domain "unmojang.org" PARENT_SCOPE)
-set(Launcher_UserAgent "${Launcher_CommonName}/${Launcher_VERSION_NAME}" PARENT_SCOPE)
-set(Launcher_ConfigFile "fjordlauncher.cfg" PARENT_SCOPE)
-set(Launcher_Git "https://github.com/unmojang/FjordLauncher" PARENT_SCOPE)
-set(Launcher_AppID "${Launcher_AppID}" PARENT_SCOPE)
-set(Launcher_SVGFileName "${Launcher_SVGFileName}" PARENT_SCOPE)
-
-set(Launcher_Desktop "program_info/${Launcher_AppID}.desktop" PARENT_SCOPE)
-set(Launcher_mrpack_MIMEInfo "program_info/modrinth-mrpack-mime.xml" PARENT_SCOPE)
-set(Launcher_MetaInfo "program_info/${Launcher_AppID}.metainfo.xml" PARENT_SCOPE)
-set(Launcher_PNG_256 "program_info/${Launcher_AppID}_256.png" PARENT_SCOPE)
-set(Launcher_SVG "program_info/${Launcher_SVGFileName}" PARENT_SCOPE)
-set(Launcher_Branding_ICNS "program_info/fjordlauncher.icns" PARENT_SCOPE)
-set(Launcher_Branding_MAC_ICON "program_info/FjordLauncher.icon" PARENT_SCOPE)
-set(Launcher_Branding_ICO "program_info/fjordlauncher.ico")
->>>>>>> upstream/HEAD
 set(Launcher_Branding_ICO "${Launcher_Branding_ICO}" PARENT_SCOPE)
 set(Launcher_Branding_WindowsRC "program_info/fnordlauncher.rc" PARENT_SCOPE)
 set(Launcher_Branding_LogoQRC "program_info/fnordlauncher.qrc" PARENT_SCOPE)
 
 set(Launcher_Portable_File "program_info/portable.txt" PARENT_SCOPE)
 
-<<<<<<< HEAD
 configure_file(gg.arson.FnordLauncher.desktop.in gg.arson.FnordLauncher.desktop)
 configure_file(gg.arson.FnordLauncher.metainfo.xml.in gg.arson.FnordLauncher.metainfo.xml)
 configure_file(fnordlauncher.rc.in fnordlauncher.rc @ONLY)
 configure_file(fnordlauncher.manifest.in fnordlauncher.manifest @ONLY)
 configure_file(fnordlauncher.ico fnordlauncher.ico COPYONLY)
-=======
-configure_file(${Launcher_AppID}.desktop.in ${Launcher_AppID}.desktop)
-configure_file(${Launcher_AppID}.metainfo.xml.in ${Launcher_AppID}.metainfo.xml)
-configure_file(fjordlauncher.rc.in fjordlauncher.rc @ONLY)
-configure_file(fjordlauncher.qrc.in fjordlauncher.qrc @ONLY)
-configure_file(fjordlauncher.manifest.in fjordlauncher.manifest @ONLY)
-configure_file(fjordlauncher.ico fjordlauncher.ico COPYONLY)
-configure_file(${Launcher_SVGFileName} ${Launcher_SVGFileName} COPYONLY)
->>>>>>> upstream/HEAD
 
 if(MSVC)
     set(Launcher_MSVC_Redist_NSIS_Section [=[
