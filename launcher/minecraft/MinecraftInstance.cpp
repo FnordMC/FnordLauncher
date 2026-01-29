@@ -69,8 +69,8 @@
 #include "minecraft/launch/VerifyJavaInstall.h"
 
 #include "minecraft/update/AssetUpdateTask.h"
+#include "minecraft/update/FMLLibrariesTask.h"
 #include "minecraft/update/FoldersTask.h"
-#include "minecraft/update/LegacyFMLLibrariesTask.h"
 #include "minecraft/update/LibrariesTask.h"
 
 #include "java/JavaUtils.h"
