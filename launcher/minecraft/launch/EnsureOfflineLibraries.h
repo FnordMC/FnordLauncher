@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
  *  Prism Launcher - Minecraft Launcher
- *  Copyright (c) 2023 Trial97 <alexandru.tripon97@gmail.com>
+ *  Copyright (C) 2026 Octol1ttle <l1ttleofficial@outlook.com>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,12 +18,19 @@
 
 #pragma once
 
-#include "ui/pages/BasePage.h"
+#include "launch/LaunchStep.h"
+#include "minecraft/MinecraftInstance.h"
 
-class ModpackProviderBasePage : public BasePage {
+class EnsureOfflineLibraries : public LaunchStep {
+    Q_OBJECT
+
    public:
-    /** Programatically set the term in the search bar. */
-    virtual void setSearchTerm(QString) = 0;
-    /** Get the current term in the search bar. */
-    virtual QString getSerachTerm() const = 0;
+    explicit EnsureOfflineLibraries(LaunchTask* parent, MinecraftInstance* instance);
+    ~EnsureOfflineLibraries() override = default;
+
+    void executeTask() override;
+    bool canAbort() const override { return false; }
+
+   private:
+    MinecraftInstance* m_instance;
 };

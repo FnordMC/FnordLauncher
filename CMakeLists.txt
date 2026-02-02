@@ -176,7 +176,7 @@ set(Launcher_FMLLIBS_BASE_URL "https://files.prismlauncher.org/fmllibs/" CACHE S
 ######## Set version numbers ########
 set(Launcher_VERSION_MAJOR 10)
 set(Launcher_VERSION_MINOR 0)
-set(Launcher_VERSION_PATCH 2)
+set(Launcher_VERSION_PATCH 4)
 set(Launcher_VERSION_DOWNSTREAM 0)
 
 set(Launcher_VERSION_NAME "${Launcher_VERSION_MAJOR}.${Launcher_VERSION_MINOR}.${Launcher_VERSION_PATCH}.${Launcher_VERSION_DOWNSTREAM}")
@@ -216,6 +216,8 @@ set(Launcher_SUBREDDIT_URL "" CACHE STRING "URL for the subreddit.")
 
 # Builds
 set(Launcher_QT_VERSION_MAJOR "6" CACHE STRING "Major Qt version to build against")
+
+option(Launcher_USE_PCH "Use precompiled headers where possible" ON)
 
 # Java downloader
 set(Launcher_ENABLE_JAVA_DOWNLOADER_DEFAULT ON)
@@ -274,7 +276,7 @@ set(Launcher_BUILD_TIMESTAMP "${TODAY}")
 # Find the required Qt parts
 if(Launcher_QT_VERSION_MAJOR EQUAL 6)
     set(QT_VERSION_MAJOR 6)
-    find_package(Qt6 REQUIRED COMPONENTS Core CoreTools Widgets Concurrent Network Test Xml NetworkAuth OpenGL)
+    find_package(Qt6 6.4 REQUIRED COMPONENTS Core CoreTools Widgets Concurrent Network Test Xml NetworkAuth OpenGL)
     find_package(Qt6 COMPONENTS DBus)
     list(APPEND Launcher_QT_DBUS Qt6::DBus)
 else()
@@ -418,7 +420,7 @@ if(UNIX AND APPLE)
 
     else()
         message(WARNING "actool not found. Cannot compile macOS app icons.\n"
-				"Install Xcode command line tools: 'xcode-select --install'")
+                "Install Xcode command line tools: 'xcode-select --install'")
     endif()
 
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
  *  Prism Launcher - Minecraft Launcher
- *  Copyright (c) 2023 Trial97 <alexandru.tripon97@gmail.com>
+ *  Copyright (C) 2025 Octol1ttle <l1ttleofficial@outlook.com>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,12 +18,8 @@
 
 #pragma once
 
-#include "ui/pages/BasePage.h"
-
-class ModpackProviderBasePage : public BasePage {
-   public:
-    /** Programatically set the term in the search bar. */
-    virtual void setSearchTerm(QString) = 0;
-    /** Get the current term in the search bar. */
-    virtual QString getSerachTerm() const = 0;
-};
+#if defined(ASSERT_NEVER)
+#error ASSERT_NEVER already defined
+#else
+#define ASSERT_NEVER(cond) (Q_ASSERT((cond) == false), (cond))
+#endif
