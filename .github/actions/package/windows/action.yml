@@ -72,7 +72,6 @@ runs:
       uses: azure/artifact-signing-action@v1
       with:
         endpoint: https://eus.codesigning.azure.net/
-<<<<<<< HEAD
         trusted-signing-account-name: FnordLauncher
         certificate-profile-name: FnordLauncher
 
@@ -81,17 +80,6 @@ runs:
           ${{ github.workspace }}\install\fnordlauncher_filelink.exe
           ${{ github.workspace }}\install\fnordlauncher_updater.exe
 
-=======
-        trusted-signing-account-name: unmojang
-        certificate-profile-name: FjordLauncher
-        files-folder: ${{ github.workspace }}\install\
-        files-folder-filter: dll,exe
-        files-folder-recurse: true
-        files-folder-depth: 2
-        # recommended in https://github.com/Azure/artifact-signing-action#timestamping-1
-        timestamp-rfc3161: "http://timestamp.acs.microsoft.com"
-        timestamp-digest: "SHA256"
->>>>>>> upstream/HEAD
         # TODO(@getchoo): Is this all really needed???
         # https://github.com/Azure/trusted-signing-action/blob/fc390cf8ed0f14e248a542af1d838388a47c7a7c/docs/OIDC.md
         exclude-environment-credential: true

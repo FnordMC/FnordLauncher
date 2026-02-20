@@ -16,7 +16,6 @@ Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/Fjo
 
 You can get installers or portable builds from the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest), MSVC builds are recommended over MinGW builds, but there's no real difference.
 
-<<<<<<< HEAD
 ### macOS
 
 There are builds for macOS in the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest).

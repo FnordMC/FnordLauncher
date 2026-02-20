@@ -76,11 +76,7 @@ runs:
         if [ '${{ inputs.gpg-private-key-id }}' != '' ]; then
           echo "$GPG_PRIVATE_KEY" > privkey.asc
           gpg --import privkey.asc
-<<<<<<< HEAD
-          gpg --export --armor "$GPG_PRIVATE_KEY_ID" > pubkey.asc
-=======
           gpg --export --armor ${{ inputs.gpg-private-key-id }} > pubkey.asc
->>>>>>> upstream/HEAD
         else
           echo ":warning: Skipped code signing for Linux AppImage, as gpg key was not present." >> $GITHUB_STEP_SUMMARY
         fi
@@ -95,17 +91,11 @@ runs:
         # FIXME(@getchoo): gamemode doesn't seem to be very portable with DBus. Find a way to make it work!
         find "$INSTALL_APPIMAGE_DIR" -name '*gamemode*' -exec rm {} +
 
-<<<<<<< HEAD
+        echo "QT_QPA_PLATFORMTHEME=xdgdesktopportal" > "$INSTALL_APPIMAGE_DIR"/.env
         ln -s gg.arson.FnordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/gg.arson.FnordLauncher.appdata.xml
         ln -s share/applications/gg.arson.FnordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
         ln -s share/icons/hicolor/256x256/apps/gg.arson.FnordLauncher.png "$INSTALL_APPIMAGE_DIR"
-=======
-        #makes the launcher use portals for file picking
-        echo "QT_QPA_PLATFORMTHEME=xdgdesktopportal" > "$INSTALL_APPIMAGE_DIR"/.env
-        ln -s org.unmojang.FjordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/org.unmojang.FjordLauncher.appdata.xml
-        ln -s share/applications/org.unmojang.FjordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
-        ln -s share/icons/hicolor/256x256/apps/org.unmojang.FjordLauncher.png "$INSTALL_APPIMAGE_DIR"
->>>>>>> upstream/HEAD
+
         mv "$INSTALL_APPIMAGE_DIR"/{sharun,AppRun}
         ls -la "$INSTALL_APPIMAGE_DIR"
 
