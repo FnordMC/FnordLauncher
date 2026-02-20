@@ -16,8 +16,13 @@ set(Launcher_DisplayName "${Launcher_DisplayName}" PARENT_SCOPE)
 
 set(Launcher_AppID "gg.arson.FnordLauncher")
 set(Launcher_SVGFileName "${Launcher_AppID}.svg")
+<<<<<<< HEAD
 set(Launcher_Copyright "© 2025-2026 Fnord Launcher Contributors\\n© 2024-2026 Fjord Launcher Contributors\\n© 2022-2024 PollyMC Contributors\\n© 2022-2025 Prism Launcher Contributors\\n© 2021-2022 PolyMC Contributors\\n© 2012-2021 MultiMC Contributors")
 set(Launcher_Copyright_Mac "© 2025-2026 Fnord Launcher Contributors\\n© 2024-2026 Fjord Launcher Contributors, © 2022-2024 PollyMC Contributors, © 2022-2025 Prism Launcher Contributors, © 2021-2022 PolyMC Contributors and © 2012-2021 MultiMC Contributors" PARENT_SCOPE)
+=======
+set(Launcher_Copyright "© 2024-2026 Fjord Launcher Contributors\\n© 2022-2024 PollyMC Contributors\\n© 2022-2026 Prism Launcher Contributors\\n© 2021-2022 PolyMC Contributors\\n© 2012-2021 MultiMC Contributors")
+set(Launcher_Copyright_Mac "© 2024-2026 Fjord Launcher Contributors, © 2022-2024 PollyMC Contributors, © 2022-2026 Prism Launcher Contributors, © 2021-2022 PolyMC Contributors and © 2012-2021 MultiMC Contributors" PARENT_SCOPE)
+>>>>>>> upstream/HEAD
 set(Launcher_Copyright "${Launcher_Copyright}" PARENT_SCOPE)
 set(Launcher_Domain "arson.gg" PARENT_SCOPE)
 set(Launcher_UserAgent "${Launcher_CommonName}/${Launcher_VERSION_NAME}" PARENT_SCOPE)
