@@ -1,4 +1,4 @@
-id: gg.arson.FnordLauncher
+id: xyz.fnordmc.FnordLauncher
 runtime: org.kde.Platform
 runtime-version: '6.10'
 sdk: org.kde.Sdk

@@ -1,4 +1,4 @@
-# <img src="./program_info/gg.arson.FnordLauncher.svg" alt="Fnord Launcher logo" width="96"/> Fnord Launcher
+# <img src="./program_info/xyz.fnordmc.FnordLauncher.svg" alt="Fnord Launcher logo" width="96"/> Fnord Launcher
 
 Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/FjordLauncher).
 

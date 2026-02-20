@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>gg.arson.FnordLauncher</id>
-  <launchable type="desktop-id">gg.arson.FnordLauncher.desktop</launchable>
+  <id>xyz.fnordmc.FnordLauncher</id>
+  <launchable type="desktop-id">xyz.fnordmc.FnordLauncher.desktop</launchable>
   <name>Fnord Launcher</name>
   <developer_name>fn2006</developer_name>
   <summary>A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once</summary>

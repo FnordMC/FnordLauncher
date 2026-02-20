@@ -105,5 +105,5 @@ jobs:
         uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: FnordLauncher-${{ runner.os }}-${{ env.VERSION }}-Flatpak.flatpak
-          manifest-path: flatpak/gg.arson.FnordLauncher.yml
+          manifest-path: flatpak/xyz.fnordmc.FnordLauncher.yml
           arch: ${{ matrix.arch }}

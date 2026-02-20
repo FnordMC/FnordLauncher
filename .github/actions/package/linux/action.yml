@@ -92,9 +92,9 @@ runs:
         find "$INSTALL_APPIMAGE_DIR" -name '*gamemode*' -exec rm {} +
 
         echo "QT_QPA_PLATFORMTHEME=xdgdesktopportal" > "$INSTALL_APPIMAGE_DIR"/.env
-        ln -s gg.arson.FnordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/gg.arson.FnordLauncher.appdata.xml
-        ln -s share/applications/gg.arson.FnordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
-        ln -s share/icons/hicolor/256x256/apps/gg.arson.FnordLauncher.png "$INSTALL_APPIMAGE_DIR"
+        ln -s xyz.fnordmc.FnordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/xyz.fnordmc.FnordLauncher.appdata.xml
+        ln -s share/applications/xyz.fnordmc.FnordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
+        ln -s share/icons/hicolor/256x256/apps/xyz.fnordmc.FnordLauncher.png "$INSTALL_APPIMAGE_DIR"
 
         mv "$INSTALL_APPIMAGE_DIR"/{sharun,AppRun}
         ls -la "$INSTALL_APPIMAGE_DIR"

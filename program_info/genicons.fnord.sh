@@ -10,7 +10,7 @@ svg2png() {
 }
 
 if command -v "scour"; then
-    scour -i gg.arson.FnordLauncher.Source.svg -o gg.arson.FnordLauncher.svg
+    scour -i xyz.fnordmc.FnordLauncher.Source.svg -o xyz.fnordmc.FnordLauncher.svg
 else
     echo 'ERROR: scour not in $PATH'
 fi
@@ -19,13 +19,13 @@ if command -v "inkscape" && command -v "icotool"; then
     # Windows ICO
     d=$(mktemp -d)
 
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_16.png" 16 16
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_24.png" 24 24
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_32.png" 32 32
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_48.png" 48 48
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_64.png" 64 64
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_128.png" 128 128
-    svg2png gg.arson.FnordLauncher.svg "$d/fnordlauncher_256.png" 256 256
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_16.png" 16 16
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_24.png" 24 24
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_32.png" 32 32
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_48.png" 48 48
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_64.png" 64 64
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_128.png" 128 128
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/fnordlauncher_256.png" 256 256
 
     rm fnordlauncher.ico 2>/dev/null
 
@@ -50,7 +50,7 @@ if command -v "inkscape" && command -v "magick"; then
 
     mkdir -p "$d"
 
-    svg2png gg.arson.FnordLauncher.svg "$d/icon_512x512@2.png" 1024 1024
+    svg2png xyz.fnordmc.FnordLauncher.svg "$d/icon_512x512@2.png" 1024 1024
     magick "$d/icon_512x512@2.png" -resize 16x16 "$d/icon_16x16.png"
     magick "$d/icon_512x512@2.png" -resize 32x32 "$d/icon_16x16@2.png"
     magick "$d/icon_512x512@2.png" -resize 32x32 "$d/icon_32x32.png"
@@ -66,4 +66,4 @@ else
 fi
 
 # replace icon in themes
-cp -v gg.arson.FnordLauncher.svg "../launcher/resources/multimc/scalable/launcher.svg"
+cp -v xyz.fnordmc.FnordLauncher.svg "../launcher/resources/multimc/scalable/launcher.svg"
