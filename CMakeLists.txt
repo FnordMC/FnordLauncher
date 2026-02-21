@@ -381,6 +381,7 @@ if(UNIX AND APPLE)
     # Add the icon
     install(FILES ${Launcher_Branding_ICNS} DESTINATION ${RESOURCES_DEST_DIR} RENAME ${Launcher_Name}.icns)
 
+#[[
     find_program(ACTOOL_EXE actool DOC "Path to the apple asset catalog compiler")
     if(ACTOOL_EXE)
         execute_process(
@@ -425,7 +426,7 @@ if(UNIX AND APPLE)
         message(WARNING "actool not found. Cannot compile macOS app icons.\n"
                 "Install Xcode command line tools: 'xcode-select --install'")
     endif()
-
+]]
 
 elseif(UNIX)
     include(KDEInstallDirs)
