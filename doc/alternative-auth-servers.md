@@ -12,9 +12,9 @@
     </thead>
     <tbody>
         <tr>
-            <td><a href="https://mc.arson.gg">Drasl</a></td>
+            <td><a href="https://auth.fnordmc.xyz">Drasl</a></td>
             <td>Also self-hostable. The public instance requires a Minecraft account to register.</td>
-            <td>https://mc.arson.gg/authlib-injector</td>
+            <td>https://auth.fnordmc.xyz/authlib-injector</td>
         </tr>
         <tr>
             <td><a href="https://ely.by">Ely.by</a></td>

@@ -59,7 +59,7 @@
        <string>https://example.com/authlib-injector</string>
      </property>
      <property name="text">
-       <string>https://mc.arson.gg/authlib-injector</string>
+       <string>https://auth.fnordmc.xyz/authlib-injector</string>
      </property>
     </widget>
    </item>
