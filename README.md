@@ -4,7 +4,11 @@ Fnord Launcher is a **fork** of [Fjord Launcher](https://github.com/unmojang/Fjo
 
 ## Advantages of this fork over Fjord Launcher
 
-- Does not require a Mojang account
+- Does not require a Microsoft account
+
+## Values
+
+Refer to [VALUES.md](VALUES.md)
 
 ## Having a problem with the launcher?
 
