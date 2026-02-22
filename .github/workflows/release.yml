@@ -40,6 +40,7 @@ jobs:
           mv FnordLauncher-*.AppImage.zsync/FnordLauncher-*-x86_64.AppImage.zsync FnordLauncher-Linux-x86_64.AppImage.zsync
           mv FnordLauncher-*.AppImage/FnordLauncher-*-aarch64.AppImage FnordLauncher-Linux-aarch64.AppImage
           mv FnordLauncher-*.AppImage.zsync/FnordLauncher-*-aarch64.AppImage.zsync FnordLauncher-Linux-aarch64.AppImage.zsync
+          mv FnordLauncher-macOS*/FnordLauncher.zip FnordLauncher-macOS-${{ env.VERSION }}.zip
 
           tar --exclude='.git' -czf FnordLauncher-${{ env.VERSION }}.tar.gz FnordLauncher-${{ env.VERSION }}
 
@@ -109,4 +110,5 @@ jobs:
             FnordLauncher-Windows-MSVC-${{ env.VERSION }}.zip
             FnordLauncher-Windows-MSVC-Portable-${{ env.VERSION }}.zip
             FnordLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
+            FjordLauncher-macOS-${{ env.VERSION }}.zip
             FnordLauncher-${{ env.VERSION }}.tar.gz
