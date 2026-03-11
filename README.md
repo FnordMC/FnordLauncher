@@ -16,6 +16,14 @@ Refer to [VALUES.md](VALUES.md)
 
 ## Installation
 
+### Flatpak
+
+You can install the FnordLauncher flatpak with these commands:
+```
+flatpak remote-add --if-not-exists FnordMC https://fnordmc.github.io/Fnord-launcher-flatpak/fnord.flatpakrepo
+flatpak install xyz.fnordmc.FnordLauncher
+```
+
 ### Windows
 
 You can get installers or portable builds from the [releases section](https://github.com/fnordmc/FnordLauncher/releases/latest), MSVC builds are recommended over MinGW builds, but there's no real difference.
