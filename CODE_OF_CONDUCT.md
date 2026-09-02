@@ -63,7 +63,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement via email at
-[coc@scrumplex.net](mailto:coc@scrumplex.net) (Email
+[contact@fnordmc.xyz](mailto:contact@fnordmc.xyz) (Email
 address subject to change).
 All complaints will be reviewed and investigated promptly and fairly.
 
