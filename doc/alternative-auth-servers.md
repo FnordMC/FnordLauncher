@@ -13,7 +13,7 @@
     <tbody>
         <tr>
             <td><a href="https://auth.fnordmc.xyz">Drasl</a></td>
-            <td>Also self-hostable. The public instance requires a Minecraft account to register.</td>
+            <td>Also self-hostable.</td>
             <td>https://auth.fnordmc.xyz/authlib-injector</td>
         </tr>
         <tr>
@@ -22,13 +22,8 @@
             <td>https://account.ely.by/api/authlib-injector</td>
         </tr>
         <tr>
-            <td><a href="https://skin.prinzeugen.net">Blessing Skin</a></td>
-            <td>Also self-hostable.</td>
-            <td>https://skin.prinzeugen.net/api/yggdrasil</td>
-        </tr>
-        <tr>
             <td><a href="https://littleskin.cn">LittleSkin</a></td>
-            <td>Another popular instance of Blessing Skin.</td>
+            <td>A popular instance of Blessing Skin operated by some of its principal contributors.</td>
             <td>https://littleskin.cn/api/yggdrasil</td>
         </tr>
     </tbody>

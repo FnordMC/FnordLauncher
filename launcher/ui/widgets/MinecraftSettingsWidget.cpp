@@ -79,7 +79,7 @@ MinecraftSettingsWidget::MinecraftSettingsWidget(MinecraftInstance* instance, QW
         m_ui->nativeWorkaroundsGroupBox->setCheckable(true);
         m_ui->perfomanceGroupBox->setCheckable(true);
         m_ui->gameTimeGroupBox->setCheckable(true);
-        m_ui->legacySettingsGroupBox->setCheckable(true);
+        m_ui->yggdrasilAgentGroupBox->setCheckable(true);
 
         m_quickPlaySingleplayer = m_instance->traits().contains("feature:is_quick_play_singleplayer");
         if (m_quickPlaySingleplayer) {
@@ -195,9 +195,12 @@ void MinecraftSettingsWidget::loadSettings()
     m_ui->environmentVariables->initialize(m_instance != nullptr, m_instance == nullptr || settings->get("OverrideEnv").toBool(),
                                            Json::toMap(settings->get("Env").toString()));
 
-    // Legacy Tweaks
-    m_ui->legacySettingsGroupBox->setChecked(m_instance == nullptr || settings->get("OverrideLegacySettings").toBool());
-    m_ui->onlineFixes->setChecked(settings->get("OnlineFixes").toBool());
+    // Yggdrasil Agent
+    m_ui->yggdrasilAgentGroupBox->setChecked(m_instance == nullptr || settings->get("OverrideYggdrasilAgent").toBool());
+    m_ui->yggdrasilAgentAutoUpdateCheck->setChecked(settings->get("YggdrasilAgentAutoUpdate").toBool());
+    m_ui->yggdrasilAgentDebugCheck->setChecked(settings->get("YggdrasilAgentDebugMode").toBool());
+    m_ui->yggdrasilAgentAntiFeatureCheck->setChecked(settings->get("YggdrasilAgentAntiFeatures").toBool());
+    m_ui->lokiDisableURLFactoryCheck->setChecked(settings->get("LokiDisableURLFactory").toBool());
 
     // Native Libraries
     m_ui->nativeWorkaroundsGroupBox->setChecked(m_instance == nullptr || settings->get("OverrideNativeWorkarounds").toBool());
@@ -294,9 +297,6 @@ void MinecraftSettingsWidget::loadSettings()
             c->blockSignals(false);
         }
     }
-
-    m_ui->legacySettingsGroupBox->setChecked(settings->get("OverrideLegacySettings").toBool());
-    m_ui->onlineFixes->setChecked(settings->get("OnlineFixes").toBool());
 
     m_ui->globalDataPacksGroupBox->blockSignals(true);
     m_ui->dataPacksPathEdit->blockSignals(true);
@@ -471,15 +471,22 @@ void MinecraftSettingsWidget::saveSettings()
             }
         }
 
-        bool overrideLegacySettings = m_instance == nullptr || m_ui->legacySettingsGroupBox->isChecked();
+        // Yggdrasil Agent
+        bool overrideYggdrasilAgent = m_instance == nullptr || m_ui->yggdrasilAgentGroupBox->isChecked();
 
         if (m_instance != nullptr)
-            settings->set("OverrideLegacySettings", overrideLegacySettings);
+            settings->set("OverrideYggdrasilAgent", overrideYggdrasilAgent);
 
-        if (overrideLegacySettings) {
-            settings->set("OnlineFixes", m_ui->onlineFixes->isChecked());
+        if (overrideYggdrasilAgent) {
+            settings->set("YggdrasilAgentAutoUpdate", m_ui->yggdrasilAgentAutoUpdateCheck->isChecked());
+            settings->set("YggdrasilAgentDebugMode", m_ui->yggdrasilAgentDebugCheck->isChecked());
+            settings->set("YggdrasilAgentAntiFeatures", m_ui->yggdrasilAgentAntiFeatureCheck->isChecked());
+            settings->set("LokiDisableURLFactory", m_ui->lokiDisableURLFactoryCheck->isChecked());
         } else {
-            settings->reset("OnlineFixes");
+            settings->reset("YggdrasilAgentAutoUpdate");
+            settings->reset("YggdrasilAgentDebugMode");
+            settings->reset("YggdrasilAgentAntiFeatures");
+            settings->reset("LokiDisableURLFactory");
         }
     }
 
