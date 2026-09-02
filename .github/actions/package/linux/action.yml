@@ -91,6 +91,9 @@ runs:
         # FIXME(@getchoo): gamemode doesn't seem to be very portable with DBus. Find a way to make it work!
         find "$INSTALL_APPIMAGE_DIR" -name '*gamemode*' -exec rm {} +
 
+        #disable OpenGL and Vulkan launcher features until https://github.com/VHSgunzo/sharun/issues/35
+        echo "PRISMLAUNCHER_DISABLE_GLVULKAN=1" >> "$INSTALL_APPIMAGE_DIR"/.env
+        #makes the launcher use portals for file picking
         echo "QT_QPA_PLATFORMTHEME=xdgdesktopportal" > "$INSTALL_APPIMAGE_DIR"/.env
         ln -s xyz.fnordmc.FnordLauncher.metainfo.xml "$INSTALL_APPIMAGE_DIR"/share/metainfo/xyz.fnordmc.FnordLauncher.appdata.xml
         ln -s share/applications/xyz.fnordmc.FnordLauncher.desktop "$INSTALL_APPIMAGE_DIR"
@@ -134,19 +137,19 @@ runs:
         tar -czf ../FnordLauncher-portable.tar.gz *
 
     - name: Upload binary tarball
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: FnordLauncher-${{ inputs.artifact-name }}-Qt6-Portable-${{ inputs.version }}-${{ inputs.build-type }}
         path: FnordLauncher-portable.tar.gz
 
     - name: Upload AppImage
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: FnordLauncher-${{ runner.os }}-${{ inputs.version }}-${{ inputs.build-type }}-${{ env.APPIMAGE_ARCH }}.AppImage
         path: FnordLauncher-${{ runner.os }}-*${{ env.APPIMAGE_ARCH }}.AppImage
 
     - name: Upload AppImage Zsync
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: FnordLauncher-${{ runner.os }}-${{ inputs.version }}-${{ inputs.build-type }}-${{ env.APPIMAGE_ARCH }}.AppImage.zsync
         path: FnordLauncher-${{ runner.os }}-*${{ env.APPIMAGE_ARCH }}.AppImage.zsync

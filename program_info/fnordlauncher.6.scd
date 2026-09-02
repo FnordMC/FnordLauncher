@@ -1,14 +1,26 @@
+<<<<<<<< HEAD:program_info/fnordlauncher.6.scd
 fnordlauncher(6)
+========
+@Launcher_APP_BINARY_NAME@(6)
+>>>>>>>> upstream/develop:program_info/fjordlauncher.6.scd.in
 
 
 # NAME
 
+<<<<<<<< HEAD:program_info/fnordlauncher.6.scd
 fnordlauncher - a launcher and instance manager for Minecraft.
+========
+@Launcher_APP_BINARY_NAME@ - a launcher and instance manager for Minecraft.
+>>>>>>>> upstream/develop:program_info/fjordlauncher.6.scd.in
 
 
 # SYNOPSIS
 
+<<<<<<<< HEAD:program_info/fnordlauncher.6.scd
 *fnordlauncher* [OPTIONS...]
+========
+*@Launcher_APP_BINARY_NAME@* [OPTIONS...]
+>>>>>>>> upstream/develop:program_info/fjordlauncher.6.scd.in
 
 
 # DESCRIPTION
@@ -69,6 +81,7 @@ variables, besides other common Qt variables:
 
 # BUGS
 
+<<<<<<<< HEAD:program_info/fnordlauncher.6.scd
 https://github.com/fnordmc/FnordLauncher/issues
 
 # RESOURCES
@@ -88,3 +101,16 @@ Prism Launcher Contributors
 Fjord Launcher Contributors
 
 Fnord Launcher Contributors
+========
+@Launcher_BUG_TRACKER_URL@
+
+# RESOURCES
+
+GitHub: @Launcher_Git@
+
+Main website: https://@Launcher_Domain@
+
+# AUTHORS
+
+@Launcher_Authors@
+>>>>>>>> upstream/develop:program_info/fjordlauncher.6.scd.in
